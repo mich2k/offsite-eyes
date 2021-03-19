@@ -27,7 +27,7 @@ public class BootLogo extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {      // chiamo un handler e do un timer a postDelayed
             @Override
             public void run() {
-                Intent afterLogo = new Intent(BootLogo.this, MainActivity.class);
+                Intent afterLogo = new Intent(BootLogo.this, Home.class);
                 Toast.makeText(BootLogo.this, "Benvenuto!", Toast.LENGTH_SHORT).show();
                 startActivity(afterLogo);
                 finish();
