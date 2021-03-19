@@ -19,7 +19,6 @@ public class BootLogo extends AppCompatActivity {
         BootLogo = findViewById(R.id.offsite_logo);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bootlogo);
-        getSupportActionBar().hide();
         AnimationUtils.loadAnimation(this, R.anim.boot_animation);
 
         // uso gli intent per avviare un activity
