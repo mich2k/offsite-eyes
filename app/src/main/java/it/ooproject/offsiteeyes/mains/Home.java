@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import it.ooproject.offsiteeyes.R;
+import it.ooproject.offsiteeyes.ScrollingCalcs;
 
 public class Home extends AppCompatActivity {
     // dec vars, the values will be assigned inside the onCreate method, here is not defined yet
@@ -29,7 +30,7 @@ public class Home extends AppCompatActivity {
         showCalcs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ciao = new Intent(Home.this, MainCalcoli.class);
+                Intent ciao = new Intent(Home.this, ScrollingCalcs.class);
                 startActivity(ciao);
             }
         });
