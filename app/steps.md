@@ -2,6 +2,6 @@
 
 -   Introduzione classe BootLogo e impostata priorità di avvio nel AndroidManifest.xml
 
--   Immagine portata in svg per supportare tutti i differenti dpi / densità
+-   Immagine portata in svg per supportare tutti i differenti dpi / densità (+ risoluzioni adattate fino a xxxhdpi)
 
--   
+-   Costruzione pagina home
