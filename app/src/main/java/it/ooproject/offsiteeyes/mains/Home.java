@@ -1,4 +1,4 @@
-package it.ooproject.offsiteeyes;
+package it.ooproject.offsiteeyes.mains;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+
+import it.ooproject.offsiteeyes.R;
 
 public class Home extends AppCompatActivity {
     // dec vars, the values will be assigned inside the onCreate method, here is not defined yet
