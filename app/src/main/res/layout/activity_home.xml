@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home"
+    android:background="@color/white"
     android:id="@+id/drawer_layout">
 
 
@@ -60,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/home_presentation_text"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/gray"
                 android:textSize="45sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_subtitle_text"
-                android:textColor="#474747"
+                android:textColor="@color/gray"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,12 +83,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.37" />
+           <!-- android:contentDescription="@string/ic_banner"-->
 
             <ImageView
                 android:id="@+id/macro_web"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
-                android:contentDescription="@string/ic_banner"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.164"
@@ -100,7 +101,6 @@
                 android:id="@+id/macro_db"
                 android:layout_width="143dp"
                 android:layout_height="141dp"
-                android:contentDescription="@string/macro_db"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.84"
@@ -113,7 +113,6 @@
                 android:id="@+id/macro_algo"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
-                android:contentDescription="@string/macro_algo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.823"
@@ -126,7 +125,6 @@
                 android:id="@+id/macro_mobile"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
-                android:contentDescription="@string/macro_mobile"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.164"

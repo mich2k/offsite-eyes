@@ -13,7 +13,7 @@
     <string name="login_failed">"Login failed"</string>
 
 
-    <string name="home_presentation_text">Benvenuto</string>
-    <string name="home_subtitle_text"> Hello! </string>
+    <string name="home_presentation_text">Benvenuto oid</string>
+    <string name="home_subtitle_text"> Dio Inesistente </string>
 
 </resources>
