@@ -6,23 +6,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".mains.Home"
     android:background="@color/white"
     android:id="@+id/drawer_layout">
 
 
-
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <include layout="@layout/offsite_toolbar" />
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <!--  <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"
@@ -38,11 +35,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:menu="@menu/menu_navigation" /> --><![CDATA[
+                app:menu="@menu/menu_navigation" /> -->
 
 
-            />
-            ]]><!-- android:fontFamily="@font/sf_ui_display_bold"-->
+            <!-- android:fontFamily="@font/sf_ui_display_bold"-->
 
             <!-- android:contentDescription="@string/ic_banner"-->
 
@@ -54,12 +50,22 @@
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="45sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+            <ImageView
+                android:id="@+id/image_bsx2"
+                android:layout_width="138dp"
+                android:layout_height="140dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.164"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.005" />
+                app:layout_constraintVertical_bias="0.306"
+                app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
                 android:id="@+id/image_tsx"
@@ -70,19 +76,7 @@
                 app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.545"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_tdx"
-                android:layout_width="143dp"
-                android:layout_height="141dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.84"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.544"
+                app:layout_constraintVertical_bias="0.634"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
@@ -91,10 +85,22 @@
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.823"
+                app:layout_constraintHorizontal_bias="0.824"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.861"
+                app:layout_constraintVertical_bias="0.95"
+                app:srcCompat="@drawable/ic_banner_foreground" />
+
+            <ImageView
+                android:id="@+id/image_tdx"
+                android:layout_width="143dp"
+                android:layout_height="141dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.843"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.633"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
@@ -106,11 +112,11 @@
                 app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.86"
+                app:layout_constraintVertical_bias="0.95"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/image_bsx2"
+                android:id="@+id/image_bsx6"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -118,7 +124,7 @@
                 app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.217"
+                app:layout_constraintVertical_bias="0.95"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
@@ -127,32 +133,40 @@
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.824"
+                app:layout_constraintHorizontal_bias="0.827"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.217"
+                app:layout_constraintVertical_bias="0.306"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/large_text"
-                app:layout_constraintTop_toBottomOf="@+id/image_bsx" />
+            <ImageView
+                android:id="@+id/image_bs3"
+                android:layout_width="138dp"
+                android:layout_height="140dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.827"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.3"
+                app:srcCompat="@drawable/ic_banner_foreground" />
+
+            <include
+                android:id="@+id/include2"
+                layout="@layout/offsite_toolbar"
+                tools:layout_editor_absoluteX="7dp"
+                tools:layout_editor_absoluteY="74dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@android:color/white">
-
-
-    </RelativeLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

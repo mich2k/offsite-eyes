@@ -6,11 +6,27 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.Material.Light.ProgressBar.Large.Inverse"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:progressTint="#000000"
+        android:visibility="visible"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offsite_logo" />
+
     <ImageView
         android:id="@+id/offsite_logo"
-        android:background="@color/white"
         android:layout_width="272dp"
         android:layout_height="264dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -18,4 +34,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.561"
         app:srcCompat="@drawable/offsite_logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
