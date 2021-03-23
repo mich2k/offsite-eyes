@@ -86,7 +86,7 @@
            <!-- android:contentDescription="@string/ic_banner"-->
 
             <ImageView
-                android:id="@+id/macro_web"
+                android:id="@+id/image_tsx"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -98,7 +98,7 @@
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/macro_db"
+                android:id="@+id/image_tdx"
                 android:layout_width="143dp"
                 android:layout_height="141dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -110,7 +110,7 @@
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/macro_algo"
+                android:id="@+id/image_bdx"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -122,7 +122,7 @@
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/macro_mobile"
+                android:id="@+id/image_bsx"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
