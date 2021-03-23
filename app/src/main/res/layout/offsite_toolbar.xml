@@ -10,7 +10,6 @@
     <ImageView
         android:layout_width="92dp"
         android:layout_height="39dp"
-        android:onClick="ClickLogo"
         android:scaleType="centerCrop"
         android:src="@drawable/offsite_logo" />
 

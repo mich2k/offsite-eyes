@@ -31,6 +31,6 @@ public class BootLogo extends AppCompatActivity {
                 startActivity(afterLogo);
                 finish();
             }
-        },5000);
+        },2500);
     }
 }
