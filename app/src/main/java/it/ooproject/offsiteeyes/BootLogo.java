@@ -12,11 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BootLogo extends AppCompatActivity {
 
-    private ImageView BootLogo;
+    //private ImageView BootLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        BootLogo = findViewById(R.id.offsite_logo);
+       // BootLogo = findViewById(R.id.offsite_logo);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bootlogo);
         AnimationUtils.loadAnimation(this, R.anim.boot_animation);

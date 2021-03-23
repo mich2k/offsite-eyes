@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
     // dec vars, the values will be assigned inside the onCreate method, here is not defined yet
@@ -21,13 +22,14 @@ public class Home extends AppCompatActivity {
 
         showCalcs = findViewById(R.id.image_tsx);
         showTutorials = findViewById(R.id.image_tdx);
-        showCalcs.setClickable(true);
+        //showCalcs.setClickable(true);
         showTutorials.setClickable(true);
 
         showCalcs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this, MainCalcoli.class));
+                Intent ciao = new Intent(Home.this, MainCalcoli.class);
+                startActivity(ciao);
             }
         });
         //getSupportActionBar().hide();
