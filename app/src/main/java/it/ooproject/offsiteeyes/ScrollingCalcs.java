@@ -15,21 +15,21 @@ import it.ooproject.offsiteeyes.databinding.ActivityScrollingCalcsBinding;
 
 public class ScrollingCalcs extends AppCompatActivity {
 
-    private ActivityScrollingCalcsBinding binding;
+    //private ActivityScrollingCalcsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityScrollingCalcsBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.test);
+        //binding = ActivityScrollingCalcsBinding.inflate(getLayoutInflater());
+        setContentView(R.layout.scroll);
 
-        Toolbar toolbar = binding.toolbar;
+     /*  Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
+     /   CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle(getTitle());
 
-        FloatingActionButton fab = binding.fab;
+        FloatingActionButton fab = binding.fab;{
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,5 +37,5 @@ public class ScrollingCalcs extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-    }
-}
+    }*/
+}}

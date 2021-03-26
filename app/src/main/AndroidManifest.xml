@@ -12,7 +12,7 @@
         <activity
             android:name=".ScrollingCalcs"
             android:label="@string/title_activity_scrolling_calcs"
-            android:theme="@style/Theme.Offsiteeyes.NoActionBar.NoActionBar"></activity>
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar.NoActionBar" />
         <activity android:name=".mains.Home" />
         <!--
         <activity
