@@ -1,110 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context=".mains.Home"
-    android:background="@color/white"
-    android:id="@+id/drawer_layout">
+    android:fillViewport="true">
 
-
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- THE FIRST ROW OF BLOCKS MUST NOT HAVE THE
+                MARGIN TOP/BOTTOM VAR SINCE THEY ARE HARDCODED
+                SINCE ARE CONSTRAINED BY THE BANNER-->
+
+        <!-- FOLLOW THE TOP DOWN + BEFORE LEFT / AFTER RIGHT ORDER -->
+
+        <ImageView
+            android:id="@+id/image_bsx11"
+            android:layout_width="138dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/distance_from_banner_and_first_block_row"
+            android:layout_marginLeft="@dimen/unique_left_and_right_margin_for_layout_blocks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/banner_calcs"
+            app:srcCompat="@drawable/ic_banner_foreground" />
+
+        <ImageView
+            android:id="@+id/image_bsx12"
+            android:layout_width="138dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="@dimen/unique_left_and_right_margin_for_layout_blocks"
+            android:layout_marginTop="@dimen/unique_top_margin_for_layout_blocks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_bsx11"
+            app:srcCompat="@drawable/ic_banner_foreground" />
+
+        <ImageView
+            android:id="@+id/image_bsx14"
+            android:layout_width="138dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/unique_top_margin_for_layout_blocks"
+            android:layout_marginLeft="@dimen/unique_left_and_right_margin_for_layout_blocks"
+            app:layout_constraintEnd_toStartOf="@+id/image_bsx15"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_bsx12"
+            app:srcCompat="@drawable/ic_banner_foreground" />
+
+        <ImageView
+            android:id="@+id/image_bsx10"
+            android:layout_width="138dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/distance_from_banner_and_first_block_row"
+            android:layout_marginRight="@dimen/unique_left_and_right_margin_for_layout_blocks"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/image_bsx11"
+            app:layout_constraintTop_toBottomOf="@+id/banner_calcs"
+            app:srcCompat="@drawable/ic_banner_foreground" />
+
+        <ImageView
+            android:id="@+id/image_bsx13"
+            android:layout_width="138dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="@dimen/unique_left_and_right_margin_for_layout_blocks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/image_bsx12"
+            app:layout_constraintTop_toBottomOf="@+id/image_bsx10"
+            app:srcCompat="@drawable/ic_banner_foreground" />
+
+        <ImageView
+            android:id="@+id/image_bsx15"
+            android:layout_width="138dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/unique_top_margin_for_layout_blocks"
+            android:layout_marginRight="@dimen/unique_left_and_right_margin_for_layout_blocks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_bsx13"
+            app:srcCompat="@drawable/ic_banner_foreground" />
+
+
+        <!-- considerare un top margin -->
+
+        <TextView
+            android:id="@+id/banner_calcs"
+            android:layout_width="413dp"
+            android:layout_height="241dp"
+            android:gravity="center"
+            android:text="@string/calcs_presentation_text"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="45sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include2" />
+        <include
+            android:id="@+id/include2"
+            layout="@layout/offsite_toolbar"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="74dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+<!--
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <!--  <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navigation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="#ffff"
-                app:itemIconTint="@drawable/selector"
-                app:itemTextColor="@drawable/selector"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                app:menu="@menu/menu_navigation" /> -->
-
-
-            <!-- android:fontFamily="@font/sf_ui_display_bold"-->
-
-            <!-- android:contentDescription="@string/ic_banner"-->
+            android:layout_height="700dp"
+ >
 
             <TextView
-                android:id="@+id/banner_txt"
+                android:id="@+id/banner_txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/calcs_presentation_text"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="45sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_bsx4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/include2" />
 
             <ImageView
-                android:id="@+id/image_bsx2"
+                android:id="@+id/image_bsx4"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/image_tsx2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.306"
+                app:layout_constraintVertical_bias="0.825"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/image_tsx"
+                android:id="@+id/image_tsx2"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/image_bsx5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.634"
+                app:layout_constraintVertical_bias="0.89"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/image_bdx"
+                android:id="@+id/image_bdx2"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.824"
+                app:layout_constraintHorizontal_bias="0.827"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.95"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/image_tdx"
+                android:id="@+id/image_tdx2"
                 android:layout_width="143dp"
                 android:layout_height="141dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="36dp"
+                app:layout_constraintBottom_toTopOf="@+id/image_bdx2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.843"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.633"
+                app:layout_constraintVertical_bias="0.885"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/image_bsx"
+                android:id="@+id/image_bsx5"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -112,63 +195,31 @@
                 app:layout_constraintHorizontal_bias="0.164"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.95"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
-                android:id="@+id/image_bsx6"
+                android:id="@+id/image_bsx8"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.164"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.95"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_bsx3"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/image_tdx2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.827"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.306"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_bs3"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.827"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.3"
+                app:layout_constraintVertical_bias="0.822"
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <include
                 android:id="@+id/include2"
                 layout="@layout/offsite_toolbar"
                 tools:layout_editor_absoluteX="7dp"
-                tools:layout_editor_absoluteY="74dp" />
+                tools:layout_editor_absoluteY="74dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+    -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-    </LinearLayout>
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
 
 

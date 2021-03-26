@@ -7,4 +7,17 @@
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+
+
+    <!-- CUSTOM VALUES 26.03.21 -->
+
+    <!-- standard margins for block imageview layouts that MUST be used in every layout scheme,
+            first used in activity_calc.xml -->
+
+    <dimen name="unique_left_and_right_margin_for_layout_blocks"> 20dp </dimen>
+    <dimen name="unique_top_margin_for_layout_blocks"> 25dp </dimen>
+    <dimen name="distance_from_banner_and_first_block_row">100dp</dimen>
+
+
 </resources>
