@@ -22,7 +22,7 @@ public class ScrollingCalcs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = ActivityScrollingCalcsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.test);
 
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
