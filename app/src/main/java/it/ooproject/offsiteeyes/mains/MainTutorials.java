@@ -1,8 +1,10 @@
-package it.ooproject.offsiteeyes;
+package it.ooproject.offsiteeyes.mains;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import it.ooproject.offsiteeyes.R;
 
 public class MainTutorials extends AppCompatActivity {
 

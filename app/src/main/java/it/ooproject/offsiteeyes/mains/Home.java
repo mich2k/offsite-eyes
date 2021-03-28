@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import it.ooproject.offsiteeyes.R;
 
@@ -24,15 +25,22 @@ public class Home extends AppCompatActivity {
         showCalcs = findViewById(R.id.image_tsx);
         showTutorials = findViewById(R.id.image_tdx);
         //showCalcs.setClickable(true);
-        showTutorials.setClickable(true);
+        //showTutorials.setClickable(true);
 
         showCalcs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ciao = new Intent(Home.this, MainCalcoli.class);
-                startActivity(ciao);
+                startActivity(new Intent(Home.this, MainCalcoli.class));
+                Toast.makeText(Home.this,getResources().getString(R.string.calcs_toast_presentation_text),Toast.LENGTH_SHORT).show();
             }
         });
-        //getSupportActionBar().hide();
+
+        showTutorials.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, MainTutorials.class));
+                Toast.makeText(Home.this,getResources().getString(R.string.tutorials_toast_presentation_text),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

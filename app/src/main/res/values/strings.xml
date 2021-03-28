@@ -23,9 +23,13 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_scrolling2">ScrollingActivity</string>
     <string name="title_activity_scrolling_calcs">ScrollingActivity</string>
+    <string name="calcs_toast_presentation_text">TODO</string>
+
 
 
     <!-- tutorials page -->
     <string name="tutorials_presentation_text">Benvenuto nella pagina dei Tutorials</string>
+    <string name="tutorials_toast_presentation_text">TODO</string>
+
 
 </resources>
