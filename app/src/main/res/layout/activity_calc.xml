@@ -27,7 +27,7 @@
             android:layout_marginTop="@dimen/distance_from_banner_and_first_block_row"
             android:layout_marginLeft="@dimen/unique_left_and_right_margin_for_layout_blocks"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/banner_calcs"
+            app:layout_constraintTop_toBottomOf="@+id/banner_tutorials"
             app:srcCompat="@drawable/ic_banner_foreground" />
 
         <ImageView
@@ -62,7 +62,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/image_bsx11"
-            app:layout_constraintTop_toBottomOf="@+id/banner_calcs"
+            app:layout_constraintTop_toBottomOf="@+id/banner_tutorials"
             app:srcCompat="@drawable/ic_banner_foreground" />
 
         <ImageView
@@ -91,7 +91,7 @@
         <!-- considerare un top margin -->
 
         <TextView
-            android:id="@+id/banner_calcs"
+            android:id="@+id/banner_tutorials"
             android:layout_width="413dp"
             android:layout_height="241dp"
             android:gravity="center"
