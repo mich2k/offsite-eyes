@@ -1,4 +1,4 @@
-package it.ooproject.offsiteeyes.ui.main;
+package it.ooproject.offsiteeyes.services;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package it.ooproject.offsiteeyes;
+package it.ooproject.offsiteeyes.services;
 
 import android.os.Bundle;
 
@@ -9,11 +9,9 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import it.ooproject.offsiteeyes.ui.main.SectionsPagerAdapter;
+import it.ooproject.offsiteeyes.services.SectionsPagerAdapter;
 import it.ooproject.offsiteeyes.databinding.ActivityServiceMyRecipesBinding;
 
 public class ServiceMyRecipes extends AppCompatActivity {

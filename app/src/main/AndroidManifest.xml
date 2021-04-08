@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Offsiteeyes.NoActionBar">
         <activity
-            android:name=".ServiceMyRecipes"
+            android:name=".services.ServiceMyRecipes"
             android:label="@string/title_activity_service_my_recipes"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar.NoActionBar"></activity>
         <activity

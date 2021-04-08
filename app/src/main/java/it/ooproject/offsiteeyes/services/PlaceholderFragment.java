@@ -1,4 +1,4 @@
-package it.ooproject.offsiteeyes.ui.main;
+package it.ooproject.offsiteeyes.services;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import it.ooproject.offsiteeyes.R;
 import it.ooproject.offsiteeyes.databinding.FragmentServiceMyRecipesBinding;
 
 /**

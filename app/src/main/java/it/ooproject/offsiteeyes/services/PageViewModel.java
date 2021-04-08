@@ -1,4 +1,4 @@
-package it.ooproject.offsiteeyes.ui.main;
+package it.ooproject.offsiteeyes.services;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

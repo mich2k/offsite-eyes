@@ -4,12 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import it.ooproject.offsiteeyes.R;
-import it.ooproject.offsiteeyes.ServiceMyRecipes;
+import it.ooproject.offsiteeyes.services.ServiceMyRecipes;
 
 public class MainMeals extends AppCompatActivity {
 
