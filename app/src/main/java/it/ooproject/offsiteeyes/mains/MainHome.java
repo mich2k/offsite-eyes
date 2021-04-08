@@ -10,7 +10,8 @@ import android.widget.Toast;
 
 import it.ooproject.offsiteeyes.R;
 
-public class Home extends AppCompatActivity {
+public class MainHome extends AppCompatActivity {
+
     // dec vars, the values will be assigned inside the onCreate method, here are not defined yet
     private ImageView bannerHome;
     private ImageView showCalcs;
@@ -20,7 +21,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main_home);
 
         showCalcs = findViewById(R.id.image_tsx);
         showTutorials = findViewById(R.id.image_tdx);
@@ -30,16 +31,16 @@ public class Home extends AppCompatActivity {
         showCalcs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this, MainCalcoli.class));
-                Toast.makeText(Home.this,getResources().getString(R.string.calcs_toast_presentation_text),Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainHome.this, MainTools.class));
+                Toast.makeText(MainHome.this,getResources().getString(R.string.calcs_toast_presentation_text),Toast.LENGTH_SHORT).show();
             }
         });
 
         showTutorials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this, MainTutorials.class));
-                Toast.makeText(Home.this,getResources().getString(R.string.tutorials_toast_presentation_text),Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainHome.this, MainTutorials.class));
+                Toast.makeText(MainHome.this,getResources().getString(R.string.tutorials_toast_presentation_text),Toast.LENGTH_SHORT).show();
             }
         });
     }

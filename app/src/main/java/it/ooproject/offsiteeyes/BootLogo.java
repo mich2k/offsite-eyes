@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import it.ooproject.offsiteeyes.mains.Home;
+import it.ooproject.offsiteeyes.mains.MainHome;
 
 public class BootLogo extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class BootLogo extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {      // chiamo un handler e do un timer a postDelayed
             @Override
             public void run() {
-                Intent afterLogo = new Intent(BootLogo.this, Home.class);
+                Intent afterLogo = new Intent(BootLogo.this, MainHome.class);
                 Toast.makeText(BootLogo.this, "Benvenuto!", Toast.LENGTH_SHORT).show();
                 startActivity(afterLogo);
                 finish();

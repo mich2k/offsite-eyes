@@ -14,14 +14,14 @@
             android:name=".ScrollingCalcs"
             android:label="@string/title_activity_scrolling_calcs"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar.NoActionBar" />
-        <activity android:name=".mains.Home" />
+        <activity android:name=".mains.MainHome" />
         <!--
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />
         -->
         <activity
-            android:name=".mains.MainCalcoli"
+            android:name=".mains.MainTools"
             android:label="@string/title_activity_login" />
         <!--
         <activity

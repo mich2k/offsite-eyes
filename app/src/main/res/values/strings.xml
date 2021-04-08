@@ -12,12 +12,16 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+    <!-- OGNI SEZIONE/BLOCCO DI STRINGHE/ID DEVE AVERE IL COMMENTO PER INTESTAZIONE
+        CHIAMATO COME LA CLASSE/SETTORE DI RIFERIMENTO -->
+
+
     <!-- home -->
     <string name="home_presentation_text">Benvenuto oid</string>
     <string name="home_subtitle_text"> Dio Inesistente </string>
 
 
-    <!-- calcs page -->
+    <!-- calcs section -->
     <string name="calcs_presentation_text">Benvenuto nella pagina dei Calcoli</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="action_settings">Settings</string>
@@ -27,7 +31,7 @@
 
 
 
-    <!-- tutorials page -->
+    <!-- tutorials section -->
     <string name="tutorials_presentation_text">Benvenuto nella pagina dei Tutorials</string>
     <string name="tutorials_toast_presentation_text">TODO</string>
 

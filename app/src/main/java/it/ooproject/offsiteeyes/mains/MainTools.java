@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import it.ooproject.offsiteeyes.R;
 
-public class MainCalcoli extends AppCompatActivity {
+public class MainTools extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calc);
+        setContentView(R.layout.activity_main_tools);
     }
 }
