@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import it.ooproject.offsiteeyes.R;
-import it.ooproject.offsiteeyes.services.ServiceMyRecipes;
+import it.ooproject.offsiteeyes.ServiceMyRecipes;
 
 public class MainMeals extends AppCompatActivity {
 
@@ -20,8 +20,9 @@ public class MainMeals extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_meals);
-
         myMeals = findViewById(R.id.image_tsx);
+
+
         myMeals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
