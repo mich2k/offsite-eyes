@@ -13,9 +13,9 @@ import it.ooproject.offsiteeyes.R;
 public class MainHome extends AppCompatActivity {
 
     // dec vars, the values will be assigned inside the onCreate method, here are not defined yet
-    private ImageView bannerHome;
-    private ImageView showCalcs;
-    private ImageView showTutorials;
+    ImageView bannerHome;
+    ImageView showCalcs;
+    ImageView showTutorials;
 
 
     @Override

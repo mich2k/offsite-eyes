@@ -14,13 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- THE FIRST ROW OF BLOCKS MUST NOT HAVE THE
-                MARGIN TOP/BOTTOM VAR SINCE THEY ARE HARDCODED
-                SINCE ARE CONSTRAINED BY THE BANNER-->
+        <!-- the first row of blocks is already constrained to the top banner -->
 
-        <!-- FOLLOW THE TOP DOWN + BEFORE LEFT / AFTER RIGHT ORDER -->
+        <!-- convention: FOLLOW TOP DOWN + (BEFORE LEFT / AFTER) RIGHT ORDER -->
 
-        <ImageView
+        s<ImageView
+            android:background="@drawable/imageview_border"
             android:id="@+id/image_bsx11"
             android:layout_width="138dp"
             android:layout_height="140dp"
@@ -31,6 +30,7 @@
             app:srcCompat="@drawable/ic_banner_foreground" />
 
         <ImageView
+            android:background="@drawable/imageview_border"
             android:id="@+id/image_bsx12"
             android:layout_width="138dp"
             android:layout_height="140dp"
@@ -41,6 +41,7 @@
             app:srcCompat="@drawable/ic_banner_foreground" />
 
         <ImageView
+            android:background="@drawable/imageview_border"
             android:id="@+id/image_bsx14"
             android:layout_width="138dp"
             android:layout_height="140dp"
@@ -53,6 +54,7 @@
             app:srcCompat="@drawable/ic_banner_foreground" />
 
         <ImageView
+            android:background="@drawable/imageview_border"
             android:id="@+id/image_bsx10"
             android:layout_width="138dp"
             android:layout_height="140dp"
@@ -66,6 +68,7 @@
             app:srcCompat="@drawable/ic_banner_foreground" />
 
         <ImageView
+            android:background="@drawable/imageview_border"
             android:id="@+id/image_bsx13"
             android:layout_width="138dp"
             android:layout_height="140dp"
@@ -78,6 +81,7 @@
             app:srcCompat="@drawable/ic_banner_foreground" />
 
         <ImageView
+            android:background="@drawable/imageview_border"
             android:id="@+id/image_bsx15"
             android:layout_width="138dp"
             android:layout_height="140dp"

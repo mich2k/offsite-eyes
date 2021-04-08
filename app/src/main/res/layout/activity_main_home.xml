@@ -86,6 +86,7 @@
            <!-- android:contentDescription="@string/ic_banner"-->
 
             <ImageView
+                android:background="@drawable/imageview_border"
                 android:id="@+id/image_tsx"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
@@ -98,6 +99,7 @@
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
+                android:background="@drawable/imageview_border"
                 android:id="@+id/image_tdx"
                 android:layout_width="143dp"
                 android:layout_height="141dp"
@@ -110,6 +112,7 @@
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
+                android:background="@drawable/imageview_border"
                 android:id="@+id/image_bdx"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
@@ -122,6 +125,7 @@
                 app:srcCompat="@drawable/ic_banner_foreground" />
 
             <ImageView
+                android:background="@drawable/imageview_border"
                 android:id="@+id/image_bsx"
                 android:layout_width="138dp"
                 android:layout_height="140dp"
