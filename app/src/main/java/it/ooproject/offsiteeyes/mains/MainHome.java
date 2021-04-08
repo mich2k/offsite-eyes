@@ -14,21 +14,21 @@ public class MainHome extends AppCompatActivity {
 
     // dec vars, the values will be assigned inside the onCreate method, here are not defined yet
     ImageView bannerHome;
-    ImageView showCalcs;
+    ImageView showTools;
     ImageView showTutorials;
-
+    ImageView showMeals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
-
-        showCalcs = findViewById(R.id.image_tsx);
+        showMeals = findViewById(R.id.image_bsx);
+        showTools = findViewById(R.id.image_tsx);
         showTutorials = findViewById(R.id.image_tdx);
         //showCalcs.setClickable(true);
         //showTutorials.setClickable(true);
 
-        showCalcs.setOnClickListener(new View.OnClickListener() {
+        showTools.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainHome.this, MainTools.class));
@@ -43,5 +43,12 @@ public class MainHome extends AppCompatActivity {
                 Toast.makeText(MainHome.this,getResources().getString(R.string.tutorials_toast_presentation_text),Toast.LENGTH_SHORT).show();
             }
         });
-    }
+
+        showMeals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainHome.this, MainMeals.class));
+                Toast.makeText(MainHome.this,getResources().getString(R.string.tutorials_toast_presentation_text),Toast.LENGTH_SHORT).show();
+            }
+        });    }
 }

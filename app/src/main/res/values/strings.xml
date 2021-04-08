@@ -30,10 +30,10 @@
     <string name="calcs_toast_presentation_text">TODO</string>
 
 
-
     <!-- tutorials section -->
     <string name="tutorials_presentation_text">Benvenuto nella pagina dei Tutorials</string>
     <string name="tutorials_toast_presentation_text">TODO</string>
+    <string name="title_activity_service_my_recipes">ServiceMyRecipes</string>
 
 
 </resources>

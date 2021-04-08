@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Offsiteeyes.NoActionBar">
-        <activity android:name=".mains.MainTutorials"></activity>
+        <activity
+            android:name=".services.ServiceMyRecipes"
+            android:label="@string/title_activity_service_my_recipes"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar.NoActionBar"></activity>
+        <activity android:name=".mains.MainTutorials" />
         <activity
             android:name=".ScrollingCalcs"
             android:label="@string/title_activity_scrolling_calcs"
