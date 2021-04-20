@@ -16,9 +16,37 @@
         CHIAMATO COME LA CLASSE/SETTORE DI RIFERIMENTO -->
 
 
-    <!-- home -->
+    <!-- Home activity -->
     <string name="home_presentation_text">Benvenuto</string>
     <string name="home_subtitle_text"> Sottotitolo </string>
+
+    <string name="home_macro_topic_pantry_title_text">La tua dispensa</string>
+    <string name="home_macro_topic_pantry_description_text">Descrizione d\'esempio</string>
+
+    <string name="home_macro_topic_tutorial_title_text">Tutorials</string>
+    <string name="home_macro_topic_tutorial_description_text">Descrizione d\'esempio</string>
+
+    <string name="home_macro_topic_tools_title_text">Strumenti</string>
+    <string name="home_macro_topic_tools_description_text">Descrizione d\'esempio</string>
+
+    <string name="home_macro_topic_attraction_title_text">Attrazioni</string>
+    <string name="home_macro_topic_attraction_description_text">Descrizione d\'esempio</string>
+
+    <!-- Pantry activity -->
+    <string name="pantry_my_recipes_title">Le mie ricette</string>
+
+    <!-- MyRecipe activity -->
+    <string name="my_recipes_search_edit_text_hint">Cerca</string>
+    <string name="my_recipes_title_name">title</string>
+    <string name="my_recipes_fab_content_description">TODO</string>
+
+
+    <!--Content description Images -->
+    <string name="home_macro_topic_logo_content_description">Logo dell\'applicazione</string>
+    <string name="home_macro_topic_pantry_icon_content_description">Icona dispensa</string>
+    <string name="home_macro_topic_tutorial_icon_content_description">Icona dispensa</string>
+    <string name="home_macro_topic_tools_icon_content_description">Icona strumenti</string>
+    <string name="home_macro_topic_attraction_icon_content_description">Icona attrazioni</string>
 
 
     <!-- calcs section -->
@@ -34,6 +62,9 @@
     <string name="tutorials_presentation_text">Benvenuto nella pagina dei Tutorials</string>
     <string name="tutorials_toast_presentation_text">TODO</string>
     <string name="title_activity_service_my_recipes">ServiceMyRecipes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 
 </resources>

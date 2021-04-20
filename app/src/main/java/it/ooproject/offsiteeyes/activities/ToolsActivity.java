@@ -1,4 +1,4 @@
-package it.ooproject.offsiteeyes.mains;
+package it.ooproject.offsiteeyes.activities;
 
 import android.os.Bundle;
 
@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import it.ooproject.offsiteeyes.R;
 
-public class MainTools extends AppCompatActivity {
+public class ToolsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_tools);
+        setContentView(R.layout.activity_tools);
     }
 }
