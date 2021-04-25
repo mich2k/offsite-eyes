@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         );
 
         cardViewTutorial.setOnClickListener(v ->
-                changeActivityOnClickHandler(HomeActivity.this, TutorialsActivity.class)
+                changeActivityOnClickHandler(HomeActivity.this, AddMyRecipeActivity.class)
         );
 
         cardViewTools.setOnClickListener(v ->

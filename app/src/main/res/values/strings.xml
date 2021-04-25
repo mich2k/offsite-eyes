@@ -34,6 +34,8 @@
 
     <!-- Pantry activity -->
     <string name="pantry_my_recipes_title">Le mie ricette</string>
+    <string name="pantry_meals_title">Ricettario</string>
+
 
     <!-- MyRecipe activity -->
     <string name="my_recipes_search_edit_text_hint">Cerca</string>

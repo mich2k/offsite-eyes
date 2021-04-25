@@ -13,6 +13,12 @@ android {
         versionCode 1
         versionName "1.0"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,6 +36,8 @@ android {
         viewBinding true
     }
 }
+
+
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
