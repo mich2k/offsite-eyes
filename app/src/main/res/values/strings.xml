@@ -15,6 +15,10 @@
     <!-- OGNI SEZIONE/BLOCCO DI STRINGHE/ID DEVE AVERE IL COMMENTO PER INTESTAZIONE
         CHIAMATO COME LA CLASSE/SETTORE DI RIFERIMENTO -->
 
+    <!-- Universal warning for not respecting mandatory input -->
+
+    <string name ="mandatory_text_not_respected">Controlla i campi obbligatori!</string>
+
 
     <!-- Home activity -->
     <string name="home_presentation_text">Benvenuto</string>
@@ -41,6 +45,10 @@
     <string name="my_recipes_search_edit_text_hint">Cerca</string>
     <string name="my_recipes_title_name">title</string>
     <string name="my_recipes_fab_content_description">TODO</string>
+
+    <!-- AddMyRecipe activity -->
+
+    <string name="add_my_recipe_activity_illegal_ingredients">Richiesto almeno un ingrediente!</string>
 
 
     <!--Content description Images -->

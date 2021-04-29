@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
+import androidx.recyclerview.widget.ListAdapter;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,6 +29,7 @@ import it.ooproject.offsiteeyes.viewmodels.MyRecipeViewModel;
 public class MyRecipeActivity extends AppCompatActivity {
     private MyRecipeViewModel myRecipeViewModel;
     private FloatingActionButton fab;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +50,18 @@ public class MyRecipeActivity extends AppCompatActivity {
 
         myRecipeViewModel.getRecipes().observe(this, list -> {
             myRecipeAdapter.submitList(list);
+            Toast.makeText(this, "a " + list.get(1).getRecipe().getTitle(), Toast.LENGTH_SHORT).show();
+
+
         });
 
         fab.setOnClickListener(v -> {
-            IngredientEntity i = new IngredientEntity();
+            startActivity(new Intent(MyRecipeActivity.this, AddMyRecipeActivity.class));
+        });
+
+
+        /*
+        *   IngredientEntity i = new IngredientEntity();
             i.setName("pasta");
 
             RecipeEntity r = new RecipeEntity();
@@ -60,6 +72,6 @@ public class MyRecipeActivity extends AppCompatActivity {
             l.add(i);
 
             myRecipeViewModel.insert(r, l);
-        });
+        * */
     }
 }

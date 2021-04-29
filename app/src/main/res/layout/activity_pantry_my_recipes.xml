@@ -55,6 +55,8 @@
         android:clickable="true"
         android:contentDescription="@string/my_recipes_fab_content_description"
         android:focusable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
