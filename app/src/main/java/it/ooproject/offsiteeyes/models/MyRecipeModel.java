@@ -1,8 +1,9 @@
 package it.ooproject.offsiteeyes.models;
 
+import java.io.Serializable;
 import java.net.URL;
 
-public class MyRecipeModel {
+public class MyRecipeModel{
     private String title;
     private String description;
     private URL imageResource;

@@ -23,7 +23,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -34,13 +36,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.ooproject.offsiteeyes.R;
+import it.ooproject.offsiteeyes.adapters.MyRecipeAdapter;
 import it.ooproject.offsiteeyes.database.entities.IngredientEntity;
 import it.ooproject.offsiteeyes.database.entities.RecipeEntity;
 import it.ooproject.offsiteeyes.viewmodels.MyRecipeViewModel;
 
 
 
-public class AddMyRecipeActivity extends AppCompatActivity{
+public class AddMyRecipeActivity extends AppCompatActivity  {
     private LinearLayout ingredientLinearLayout;
     private Button btnAddIngredient;
     private Button btnImageIngredient;
@@ -61,6 +64,10 @@ public class AddMyRecipeActivity extends AppCompatActivity{
     public static Context context;
 
 
+    private RecyclerView mRecyclerView;
+    private MyRecipeAdapter mAdapter;
+
+    @SuppressLint("ResourceType")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +85,10 @@ public class AddMyRecipeActivity extends AppCompatActivity{
         myRecipeViewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(MyRecipeViewModel.class);
         context = getApplicationContext();
+
+
+        mRecyclerView = findViewById(R.layout.row_pantry_my_recipes_add);
+
 
 
         EditText test = findViewById(R.id.edit_text_titlle_add_recipes_textInput);
@@ -220,4 +231,6 @@ public class AddMyRecipeActivity extends AppCompatActivity{
         }
 
     }
+
+
 }

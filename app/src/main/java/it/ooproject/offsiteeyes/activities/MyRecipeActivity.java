@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.ListAdapter;
@@ -19,16 +20,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.ooproject.offsiteeyes.MyRecipeViewHolder;
 import it.ooproject.offsiteeyes.R;
 import it.ooproject.offsiteeyes.adapters.MyRecipeAdapter;
 import it.ooproject.offsiteeyes.database.entities.IngredientEntity;
 import it.ooproject.offsiteeyes.database.entities.RecipeEntity;
+import it.ooproject.offsiteeyes.models.MyRecipeModel;
 import it.ooproject.offsiteeyes.viewmodels.MyRecipeViewModel;
 
 
-public class MyRecipeActivity extends AppCompatActivity {
+public class MyRecipeActivity extends AppCompatActivity implements MyRecipeViewHolder.OnRecipeListener {
     private MyRecipeViewModel myRecipeViewModel;
     private FloatingActionButton fab;
+    private Context context;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,7 @@ public class MyRecipeActivity extends AppCompatActivity {
 
         RecyclerView myRecipeRecyclerView;
         myRecipeRecyclerView = findViewById(R.id.recycler_view_myrecipes);
-        final MyRecipeAdapter myRecipeAdapter = new MyRecipeAdapter(new MyRecipeAdapter.MyRecipeDiff());
+        final MyRecipeAdapter myRecipeAdapter = new MyRecipeAdapter(new MyRecipeAdapter.MyRecipeDiff(), this);
 
         myRecipeRecyclerView.setAdapter(myRecipeAdapter);
         myRecipeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -50,7 +54,7 @@ public class MyRecipeActivity extends AppCompatActivity {
 
         myRecipeViewModel.getRecipes().observe(this, list -> {
             myRecipeAdapter.submitList(list);
-            Toast.makeText(this, "a " + list.get(1).getRecipe().getTitle(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "sel: " + list.get(1).getRecipe().getTitle(), Toast.LENGTH_SHORT).show();
 
 
         });
@@ -73,5 +77,12 @@ public class MyRecipeActivity extends AppCompatActivity {
 
             myRecipeViewModel.insert(r, l);
         * */
+    }
+
+    @Override
+    public void onRecipeListener(int position) {
+        myRecipeViewModel.getRecipes().getValue().get(position);
+        Intent intent = new Intent(this, MyRecipeShowRecipeData.class);
+        startActivity(intent);
     }
 }

@@ -2,7 +2,6 @@ package it.ooproject.offsiteeyes.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +19,7 @@ public class PantryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry);
 
-        cardViewMyRecipes = findViewById(R.id.card_view_pantry_myrecipes);
+        cardViewMyRecipes = findViewById(R.id.card_view_games_second_option);
 
         cardViewMyRecipes.setOnClickListener(v -> {
             startActivity(new Intent(PantryActivity.this, MyRecipeActivity.class));

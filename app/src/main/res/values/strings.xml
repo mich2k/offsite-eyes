@@ -17,7 +17,7 @@
 
     <!-- Universal warning for not respecting mandatory input -->
 
-    <string name ="mandatory_text_not_respected">Controlla i campi obbligatori!</string>
+    <string name="mandatory_text_not_respected">Controlla i campi obbligatori!</string>
 
 
     <!-- Home activity -->
@@ -70,10 +70,22 @@
 
     <!-- tutorials section -->
     <string name="tutorials_presentation_text">Benvenuto nella pagina dei Tutorials</string>
+    <string name="tutorials_learn_by_playing_text">Learn by Playing</string>
+    <string name="tutorials_video">Learn by Watching</string>
     <string name="tutorials_toast_presentation_text">TODO</string>
     <string name="title_activity_service_my_recipes">ServiceMyRecipes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Games section -->
+    <string name="games_first_option_title">Arrivo in una nuova città!</string>
+    <string name="games_first_option_subtitle">Come ti comporterai non appena fuori la tua città natale?</string>
+    <string name="games_second_option_title">Una nuova casa</string>
+    <string name="games_second_option_subtitle">Scegliere una casa non è banale, ci riuscirai?</string>
+
+    <!-- Games/Quiz sub-section -->
+    <string name="games_quiz_sub">Seleziona la risposta giusta!</string>
 
 
 

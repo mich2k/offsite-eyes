@@ -18,8 +18,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        cardViewPantry = findViewById(R.id.card_view_home_pantry);
-        cardViewTutorial = findViewById(R.id.card_view_pantry_myrecipes);
+        cardViewPantry = findViewById(R.id.card_view_games_first_option);
+        cardViewTutorial = findViewById(R.id.card_view_games_second_option);
         cardViewTools = findViewById(R.id.card_view_home_tools);
         cardViewAttraction = findViewById(R.id.card_view_home_attraction);
 
@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         );
 
         cardViewTutorial.setOnClickListener(v ->
-                changeActivityOnClickHandler(HomeActivity.this, AddMyRecipeActivity.class)
+                changeActivityOnClickHandler(HomeActivity.this, TutorialsActivity.class)
         );
 
         cardViewTools.setOnClickListener(v ->
