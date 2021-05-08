@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
-                android:textColor="#FF0092"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/quiz_back"
                 app:layout_constraintEnd_toEndOf="@+id/quiz_back"
@@ -60,12 +60,14 @@
                 app:layout_constraintTop_toTopOf="@+id/quiz_back"
                 app:layout_constraintVertical_bias="0.496" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/option_3"
                 android:layout_width="320dp"
                 android:layout_height="44dp"
-                android:background="@drawable/games_quiz_choice"
                 android:textAllCaps="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#000000"
+                app:cornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
@@ -73,12 +75,23 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.722" />
 
-            <Button
+            <!--<com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                app:cornerRadius="24dp"
+                app:strokeColor="#59CECE"
+                tools:layout_editor_absoluteX="36dp"
+                tools:layout_editor_absoluteY="320dp"></com.google.android.material.button.MaterialButton>
+-->
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/option_1"
                 android:layout_width="320dp"
                 android:layout_height="44dp"
-                android:background="@drawable/games_quiz_choice"
                 android:textAllCaps="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#000000"
+                app:cornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
@@ -86,12 +99,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.528" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/option_2"
                 android:layout_width="320dp"
                 android:layout_height="44dp"
-                android:background="@drawable/games_quiz_choice"
                 android:textAllCaps="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#000000"
+                app:cornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
@@ -99,12 +114,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.626" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/option_4"
                 android:layout_width="320dp"
                 android:layout_height="44dp"
-                android:background="@drawable/games_quiz_choice"
                 android:textAllCaps="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#000000"
+                app:cornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
@@ -127,15 +144,15 @@
 
             <TextView
                 android:id="@+id/text_view_tutorials_questions_left"
-                android:layout_width="81dp"
+                android:layout_width="103dp"
                 android:layout_height="27dp"
                 android:text="Domanda: "
                 app:layout_constraintBottom_toTopOf="@+id/quiz_back"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.827"
+                app:layout_constraintHorizontal_bias="0.856"
                 app:layout_constraintStart_toEndOf="@+id/image_view_backarrow_tutorials_game"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.604" />
+                app:layout_constraintVertical_bias="0.833" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

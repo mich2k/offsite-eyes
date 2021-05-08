@@ -34,9 +34,9 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_games);
         textViewQuestion = findViewById(R.id.games_question_text_view);
         btnOption1 = findViewById(R.id.option_1);
-        btnOption1 = findViewById(R.id.option_2);
-        btnOption1 = findViewById(R.id.option_3);
-        btnOption1 = findViewById(R.id.option_4);
+        btnOption2 = findViewById(R.id.option_2);
+        btnOption3 = findViewById(R.id.option_3);
+        btnOption4 = findViewById(R.id.option_4);
         textViewCurrentQuestionNumber = findViewById(R.id.text_view_tutorials_questions_left);
         imageViewBackArrow = findViewById(R.id.image_view_backarrow_tutorials_game);
 
