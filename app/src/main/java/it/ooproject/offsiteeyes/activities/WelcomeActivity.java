@@ -51,13 +51,12 @@ import it.ooproject.offsiteeyes.R;
 // https://maps.googleapis.com/maps/api/place/photo?maxwidth=1080&maxheight=1920&photoreference=ATtYBwIGXHSFnYqiYq6mD-uloybmRgEJnVGdj8PFmVngJaPczhQk5xedQNs19rofDOjZSlG5LKkD43qVt-GKS07KlD9WY5CkOyNdmklGhmV55J4kySGg_fMrvJK6PYI_Gux5gfRVIaXiv4jdP5lJbfu2LCFCkU4i0cjUEvJ5gvvIA4g0GtFO&key=AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g
 // https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Napoli+Posillipo&inputtype=textquery&fields=photos,formatted_address,name&locationbias&key=AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g
 public class WelcomeActivity extends AppCompatActivity {
-    private final String APIKey = "AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g";
-    private String stringURL;
     private TextInputLayout textInputCityOfArrival;
     private TextInputLayout textInputName;
     private Button btnNext;
     private RequestQueue reqQueue;
-    private String city;
+    private Editable city;
+    private Editable name;
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
@@ -70,14 +69,12 @@ public class WelcomeActivity extends AppCompatActivity {
         textInputCityOfArrival.getEditText().setText(city);
 
 
-        //Toast.makeText(this, "req " + stringURL, Toast.LENGTH_SHORT).show();
-
         btnNext.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                Editable city = textInputCityOfArrival.getEditText().getText();
-                Editable name = textInputName.getEditText().getText();
+                city = textInputCityOfArrival.getEditText().getText();
+                name = textInputName.getEditText().getText();
                 if(city.length() == 0 || name.length() == 0){
                     Toast.makeText(WelcomeActivity.this, "Questi due campi non possono essere vuoti", Toast.LENGTH_SHORT).show();
 

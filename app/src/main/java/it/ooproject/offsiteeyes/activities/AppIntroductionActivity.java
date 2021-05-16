@@ -23,6 +23,9 @@ import com.android.volley.toolbox.Volley;
 import it.ooproject.offsiteeyes.R;
 
 public class AppIntroductionActivity extends AppCompatActivity {
+    private final String APIKey = "AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g";
+    private String stringURL;
+
     RequestQueue reqQueue;
 
     @Override
