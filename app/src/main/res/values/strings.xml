@@ -36,6 +36,9 @@
     <string name="home_macro_topic_attraction_title_text">Attrazioni</string>
     <string name="home_macro_topic_attraction_description_text">Descrizione d\'esempio</string>
 
+    <string name="home_macro_topic_about_us_title_text">About Us</string>
+    <string name="home_macro_topic_about_us_description_text">Descrizione d\'esempio</string>
+
     <!-- Pantry activity -->
     <string name="pantry_my_recipes_title">Le mie ricette</string>
     <string name="pantry_meals_title">Ricettario</string>
@@ -57,6 +60,8 @@
     <string name="home_macro_topic_tutorial_icon_content_description">Icona dispensa</string>
     <string name="home_macro_topic_tools_icon_content_description">Icona strumenti</string>
     <string name="home_macro_topic_attraction_icon_content_description">Icona attrazioni</string>
+    <string name="home_macro_topic_about_us_icon_content_description">Icona about us</string>
+
 
 
     <!-- calcs section -->
@@ -86,6 +91,22 @@
 
     <!-- Games/Quiz sub-section -->
     <string name="games_quiz_sub">Seleziona la risposta giusta!</string>
+
+    <!-- AboutUs Section -->
+    <string name="about_title">About us.</string>
+    <string name="about_who_we_are">Chi Siamo</string>
+    <string name="about_why_this_app">Perchè questa app</string>
+    <string name="about_what_we_do">Di cosa ci occupiamo</string>
+
+
+    <!-- Welcome Section -->
+
+    <string name="welcome_title">Benvenuto.</string>
+    <string name="welcome_city_textview">Dicci due cose su di te!</string>
+    <string name="welcome_button_text">Avanti</string>
+
+
+
 
 
 

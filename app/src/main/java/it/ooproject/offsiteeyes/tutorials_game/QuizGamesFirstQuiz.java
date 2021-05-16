@@ -2,6 +2,7 @@ package it.ooproject.offsiteeyes.tutorials_game;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,6 +47,34 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
         questionCountTot = questionList.size();
         Toast.makeText(this, "size:" + questionCountTot, Toast.LENGTH_SHORT).show();
 
+        btnOption1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkGivenAnswer(1);
+                goNextQuestion();
+            }
+        });
+        btnOption2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkGivenAnswer(2);
+                goNextQuestion();
+            }
+        });
+        btnOption3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkGivenAnswer(3);
+                goNextQuestion();
+            }
+        });
+        btnOption4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkGivenAnswer(4);
+                goNextQuestion();
+            }
+        });
         goNextQuestion();
 
     }
@@ -63,6 +92,16 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
         }else{
             finishQuiz();
         }
+    }
+    private void checkGivenAnswer(int answer_number){
+        if(answer_number == currentQuestion.getAnswer()){
+            score++;
+            showRisult(answer_number);
+        }
+    }
+    private void showRisult(int answer_number){
+        Toast.makeText(this, "a:" + btnOption1.getTransitionName(), Toast.LENGTH_SHORT).show();
+
     }
 
     private void finishQuiz(){
