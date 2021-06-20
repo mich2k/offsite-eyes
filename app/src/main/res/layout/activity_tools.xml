@@ -1,229 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_pantry"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="@drawable/home_background"
+    tools:context=".activities.PantryActivity">
+
+
+    <ImageView
+        android:id="@+id/image_view_tools"
+        android:layout_width="176dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg"
+        android:contentDescription="@string/home_macro_topic_logo_content_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/constraint_layout_tools_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_tools"
+        >
 
-        <!-- the first row of blocks is already constrained to the top banner -->
-
-        <!-- convention: FOLLOW TOP DOWN + (BEFORE LEFT / AFTER) RIGHT ORDER -->
-
-        s<ImageView
-            android:background="@drawable/imageview_border"
-            android:id="@+id/image_bsx11"
-            android:layout_width="138dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="@dimen/distance_from_banner_and_first_block_row"
-            android:layout_marginLeft="@dimen/unique_left_and_right_margin_for_layout_blocks"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/banner_tutorials"
-            app:srcCompat="@drawable/ic_banner_foreground" />
-
-        <ImageView
-            android:background="@drawable/imageview_border"
-            android:id="@+id/image_bsx12"
-            android:layout_width="138dp"
-            android:layout_height="140dp"
-            android:layout_marginLeft="@dimen/unique_left_and_right_margin_for_layout_blocks"
-            android:layout_marginTop="@dimen/unique_top_margin_for_layout_blocks"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_bsx11"
-            app:srcCompat="@drawable/ic_banner_foreground" />
-
-        <ImageView
-            android:background="@drawable/imageview_border"
-            android:id="@+id/image_bsx14"
-            android:layout_width="138dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="@dimen/unique_top_margin_for_layout_blocks"
-            android:layout_marginLeft="@dimen/unique_left_and_right_margin_for_layout_blocks"
-            app:layout_constraintEnd_toStartOf="@+id/image_bsx15"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_bsx12"
-            app:srcCompat="@drawable/ic_banner_foreground" />
-
-        <ImageView
-            android:background="@drawable/imageview_border"
-            android:id="@+id/image_bsx10"
-            android:layout_width="138dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="@dimen/distance_from_banner_and_first_block_row"
-            android:layout_marginRight="@dimen/unique_left_and_right_margin_for_layout_blocks"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/image_bsx11"
-            app:layout_constraintTop_toBottomOf="@+id/banner_tutorials"
-            app:srcCompat="@drawable/ic_banner_foreground" />
-
-        <ImageView
-            android:background="@drawable/imageview_border"
-            android:id="@+id/image_bsx13"
-            android:layout_width="138dp"
-            android:layout_height="140dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_first_option"
+            android:layout_width="214dp"
+            android:layout_height="178dp"
             android:layout_marginTop="24dp"
-            android:layout_marginRight="@dimen/unique_left_and_right_margin_for_layout_blocks"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#304FFE"
+            app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/image_bsx12"
-            app:layout_constraintTop_toBottomOf="@+id/image_bsx10"
-            app:srcCompat="@drawable/ic_banner_foreground" />
-
-        <ImageView
-            android:background="@drawable/imageview_border"
-            android:id="@+id/image_bsx15"
-            android:layout_width="138dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="@dimen/unique_top_margin_for_layout_blocks"
-            android:layout_marginRight="@dimen/unique_left_and_right_margin_for_layout_blocks"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_bsx13"
-            app:srcCompat="@drawable/ic_banner_foreground" />
-
-
-        <!-- considerare un top margin -->
-
-        <TextView
-            android:id="@+id/banner_tutorials"
-            android:layout_width="413dp"
-            android:layout_height="241dp"
-            android:gravity="center"
-            android:text="@string/calcs_presentation_text"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="45sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include2" />
-        <include
-            android:id="@+id/include2"
-            layout="@layout/offsite_toolbar"
-            tools:layout_editor_absoluteX="7dp"
-            tools:layout_editor_absoluteY="74dp" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout_tools_first"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/first_option_tools"
+                    android:layout_width="141dp"
+                    android:layout_height="99dp"
+                    android:layout_marginBottom="32dp"
+                    android:contentDescription="@string/home_macro_topic_tutorial_icon_content_description"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_washing_machine" />
+
+                <TextView
+                    android:id="@+id/text_view_first_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Washing Machine"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view_games_opt2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_second_option"
+            android:layout_width="214dp"
+            android:layout_height="178dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#6200EA"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/card_view_first_option"
+            app:layout_constraintStart_toStartOf="@+id/card_view_first_option"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_first_option">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_tools_second"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/second_option_tools"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                   <!-- app:srcCompat="@drawable/" -->
+
+
+                <TextView
+                    android:id="@+id/text_view_second_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="todo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view_tutorial_video" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
 
-
-<!--
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="700dp"
- >
-
-            <TextView
-                android:id="@+id/banner_txt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/calcs_presentation_text"
-                android:textAlignment="center"
-                android:textColor="@color/gray"
-                android:textSize="45sp"
-                app:layout_constraintBottom_toBottomOf="@+id/image_bsx4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/include2" />
-
-            <ImageView
-                android:id="@+id/image_bsx4"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                app:layout_constraintBottom_toTopOf="@+id/image_tsx2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.164"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.825"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_tsx2"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                app:layout_constraintBottom_toTopOf="@+id/image_bsx5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.164"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.89"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_bdx2"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.827"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_tdx2"
-                android:layout_width="143dp"
-                android:layout_height="141dp"
-                android:layout_marginTop="36dp"
-                app:layout_constraintBottom_toTopOf="@+id/image_bdx2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.843"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.885"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_bsx5"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.164"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <ImageView
-                android:id="@+id/image_bsx8"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                app:layout_constraintBottom_toTopOf="@+id/image_tdx2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.827"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.822"
-                app:srcCompat="@drawable/ic_banner_foreground" />
-
-            <include
-                android:id="@+id/include2"
-                layout="@layout/offsite_toolbar"
-                tools:layout_editor_absoluteX="7dp"
-                tools:layout_editor_absoluteY="74dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
-    -->
-
-
-
+</androidx.constraintlayout.widget.ConstraintLayout>

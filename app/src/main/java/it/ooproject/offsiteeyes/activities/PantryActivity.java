@@ -19,7 +19,7 @@ public class PantryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry);
 
-        cardViewMyRecipes = findViewById(R.id.card_view_games_second_option);
+        cardViewMyRecipes = findViewById(R.id.card_view_first_option);
 
         cardViewMyRecipes.setOnClickListener(v -> {
             startActivity(new Intent(PantryActivity.this, MyRecipeActivity.class));

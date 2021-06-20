@@ -11,7 +11,7 @@
 
 
     <ImageView
-        android:id="@+id/image_view_tutorials_games_logo"
+        android:id="@+id/image_view_tools"
         android:layout_width="176dp"
         android:layout_height="164dp"
         android:layout_marginStart="32dp"
@@ -33,11 +33,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view_tutorials_games_logo"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_tools"
         >
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_games_second_option"
+            android:id="@+id/card_view_first_option"
             android:layout_width="214dp"
             android:layout_height="178dp"
             android:layout_marginTop="24dp"
@@ -51,7 +51,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_layout_games_second_option"
+                android:id="@+id/constraint_layout_tools_first"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -68,7 +68,7 @@
                     app:srcCompat="@drawable/ic_gamepad" />
 
                 <TextView
-                    android:id="@+id/text_view_opt1_games_title"
+                    android:id="@+id/text_view_first_option"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tutorials_learn_by_playing_text"
@@ -83,7 +83,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_tutorial_videos"
+            android:id="@+id/card_view_second_option"
             android:layout_width="214dp"
             android:layout_height="178dp"
             android:layout_marginTop="16dp"
@@ -92,12 +92,12 @@
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="#6200EA"
             app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/card_view_games_second_option"
-            app:layout_constraintStart_toStartOf="@+id/card_view_games_second_option"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_games_second_option">
+            app:layout_constraintEnd_toEndOf="@+id/card_view_first_option"
+            app:layout_constraintStart_toStartOf="@+id/card_view_first_option"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_first_option">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_layout_pantry_meals"
+                android:id="@+id/constraint_tools_second"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -114,7 +114,7 @@
                     app:srcCompat="@drawable/ic_tutorials_play" />
 
                 <TextView
-                    android:id="@+id/text_view_tutorial_videos"
+                    android:id="@+id/text_view_second_option"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tutorials_video"
