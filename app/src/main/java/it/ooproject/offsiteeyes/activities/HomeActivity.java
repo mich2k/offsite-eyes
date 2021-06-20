@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         cardViewPantry = findViewById(R.id.card_view_games_first_option);
-        cardViewTutorial = findViewById(R.id.card_view_games_second_option);
+        cardViewTutorial = findViewById(R.id.card_view_first_option);
         cardViewTools = findViewById(R.id.card_view_home_tools);
         cardViewAttraction = findViewById(R.id.card_view_home_attraction);
         cardViewAboutUs = findViewById(R.id.card_view_home_about_us);

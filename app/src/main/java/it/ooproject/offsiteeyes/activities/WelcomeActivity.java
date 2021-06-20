@@ -1,48 +1,20 @@
 package it.ooproject.offsiteeyes.activities;
 
-import android.app.VoiceInteractor;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.util.StringUtil;
 
-import com.android.volley.Cache;
-import com.android.volley.Network;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.BasicNetwork;
-import com.android.volley.toolbox.DiskBasedCache;
-import com.android.volley.toolbox.HurlStack;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.gson.internal.bind.util.ISO8601Utils;
-
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.NetworkInterface;
-import java.net.URL;
 
 import it.ooproject.offsiteeyes.R;
 
@@ -62,9 +34,9 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        btnNext = findViewById(R.id.btn_next_welcome);
+        btnNext = findViewById(R.id.btn_wmachine_calculate);
 
-        textInputCityOfArrival = findViewById(R.id.text_input_welcome_city);
+        textInputCityOfArrival = findViewById(R.id.txtInput_3);
         textInputName = findViewById(R.id.text_input_welcome_name);
         textInputCityOfArrival.getEditText().setText(city);
 

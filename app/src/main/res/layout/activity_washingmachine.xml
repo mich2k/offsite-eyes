@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wmachine_tool_bg">
+
+
+    <TextView
+        android:id="@+id/txtView_result"
+        android:layout_width="173dp"
+        android:layout_height="78dp"
+
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893" />
+
+    <TextView
+        android:id="@+id/txtView_info2"
+        android:layout_width="144dp"
+        android:layout_height="54dp"
+        android:text="Durezza  \n (dolce &lt; 15; media 15 - 25; dura &gt; 25)"
+
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <TextView
+        android:id="@+id/wm_title"
+        android:layout_width="362dp"
+        android:layout_height="76dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/wm_title"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005" />
+
+    <TextView
+        android:textAlignment="center"
+        android:id="@+id/wm_subtitle"
+        android:layout_width="330dp"
+        android:layout_height="87dp"
+        android:alpha="0.60"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/wm_subtitle"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <RadioGroup
+        android:id="@+id/radioGrpupCapacity"
+        android:layout_width="149dp"
+        android:layout_height="185dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518">
+
+        <RadioButton
+            android:id="@+id/radiobtn_1"
+            android:layout_width="105dp"
+            android:layout_height="69dp"
+            android:hint="1"
+            android:text="4/5 Kg" />
+
+        <RadioButton
+            android:id="@+id/radiobtn_2"
+            android:layout_width="105dp"
+            android:layout_height="63dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="12dp"
+            android:hint="2"
+            android:text="5/7 Kg" />
+
+        <RadioButton
+            android:id="@+id/radiobtn_3"
+            android:layout_width="106dp"
+            android:layout_height="62dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="256dp"
+            android:hint="3"
+            android:text="8/10 Kg" />
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInput_3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="138dp"
+        android:layout_height="65dp"
+        android:hint="Dolce - 5Kg"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="62dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInput_1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="140dp"
+        android:layout_height="63dp"
+        android:hint="Gradi Francesi"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" >
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_wmachine_calculate"
+        android:layout_width="172dp"
+        android:layout_height="41dp"
+        android:background="@drawable/button"
+        android:text="CALCOLA"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
+
+    <TextView
+        android:id="@+id/txtView_info"
+        android:layout_width="135dp"
+        android:layout_height="22dp"
+        android:text="Quantitativo base:"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.352" />
+
+    <TextView
+        android:id="@+id/txtView_info3"
+        android:layout_width="135dp"
+        android:layout_height="22dp"
+        android:text="Carico:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

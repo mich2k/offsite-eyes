@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/welcome_title"
+        android:id="@+id/wm_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_title"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.107" />
 
     <TextView
-        android:id="@+id/welcome_subtitle"
+        android:id="@+id/wm_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.60"
@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.28" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_welcome_city"
+        android:id="@+id/txtInput_3"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_next_welcome"
+        android:id="@+id/btn_wmachine_calculate"
         android:layout_width="172dp"
         android:layout_height="41dp"
         android:background="@drawable/button"

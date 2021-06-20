@@ -72,6 +72,12 @@
     <string name="title_activity_scrolling_calcs">ScrollingActivity</string>
     <string name="calcs_toast_presentation_text">TODO</string>
 
+    <!-- calcs/ washing machine -->
+    <string name="wm_title">Quanto detergente?</string>
+    <string name="wm_subtitle">Calcola il quantitativo corretto (in ml) in base al tuo carico (kg) partendo dal valore base sull etichetta del detergente:</string>
+
+
+
 
     <!-- tutorials section -->
     <string name="tutorials_presentation_text">Benvenuto nella pagina dei Tutorials</string>
@@ -83,7 +89,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <!-- Games section -->
+    <!-- tutorials/ games section -->
     <string name="games_first_option_title">Arrivo in una nuova città!</string>
     <string name="games_first_option_subtitle">Come ti comporterai non appena fuori la tua città natale?</string>
     <string name="games_second_option_title">Una nuova casa</string>
@@ -92,7 +98,7 @@
     <!-- Games/Quiz sub-section -->
     <string name="games_quiz_sub">Seleziona la risposta giusta!</string>
 
-    <!-- AboutUs Section -->
+    <!-- about us Section -->
     <string name="about_title">About us.</string>
     <string name="about_who_we_are">Chi Siamo</string>
     <string name="about_why_this_app">Perchè questa app</string>

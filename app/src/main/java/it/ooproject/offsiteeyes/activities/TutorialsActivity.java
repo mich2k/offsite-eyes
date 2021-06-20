@@ -18,8 +18,8 @@ public class TutorialsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorials);
 
-        cardViewGames = findViewById(R.id.card_view_games_second_option);
-        cardViewVideos = findViewById(R.id.card_view_tutorial_videos);
+        cardViewGames = findViewById(R.id.card_view_first_option);
+        cardViewVideos = findViewById(R.id.card_view_second_option);
 
         cardViewGames.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

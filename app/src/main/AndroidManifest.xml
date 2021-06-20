@@ -47,6 +47,10 @@
             android:label="IntroductionActivity"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
+            android:name=".activities.WashingMachineActivity"
+            android:label="WMActivity"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
+        <activity
             android:name=".activities.ToolsActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".BootLogoActivity">
