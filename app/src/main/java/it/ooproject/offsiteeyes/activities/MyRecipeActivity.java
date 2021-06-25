@@ -5,27 +5,17 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
-
-import androidx.recyclerview.widget.ListAdapter;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import it.ooproject.offsiteeyes.MyRecipeViewHolder;
+import it.ooproject.offsiteeyes.viewholder.MyRecipeViewHolder;
 import it.ooproject.offsiteeyes.R;
 import it.ooproject.offsiteeyes.adapters.MyRecipeAdapter;
-import it.ooproject.offsiteeyes.database.entities.IngredientEntity;
-import it.ooproject.offsiteeyes.database.entities.RecipeEntity;
-import it.ooproject.offsiteeyes.models.MyRecipeModel;
+import it.ooproject.offsiteeyes.models.RecipeModel;
 import it.ooproject.offsiteeyes.viewmodels.MyRecipeViewModel;
 
 

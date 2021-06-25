@@ -16,8 +16,8 @@ import it.ooproject.offsiteeyes.database.entities.RecipeIngredientCrossRefEntity
 import it.ooproject.offsiteeyes.database.entities.RecipeWithIngredientEntity;
 
 public class MyRecipeRepository {
-    private RecipeDao recipeDao;
-    private LiveData<List<RecipeWithIngredientEntity>> recipes;
+    private final RecipeDao recipeDao;
+    private final LiveData<List<RecipeWithIngredientEntity>> recipes;
 
 
     public MyRecipeRepository(Application application) {

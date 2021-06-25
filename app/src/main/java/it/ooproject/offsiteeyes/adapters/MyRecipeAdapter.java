@@ -6,8 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
-import it.ooproject.offsiteeyes.MyRecipeViewHolder;
-import it.ooproject.offsiteeyes.database.entities.RecipeEntity;
+import it.ooproject.offsiteeyes.viewholder.MyRecipeViewHolder;
 import it.ooproject.offsiteeyes.database.entities.RecipeWithIngredientEntity;
 
 public class MyRecipeAdapter extends ListAdapter<RecipeWithIngredientEntity, MyRecipeViewHolder> {

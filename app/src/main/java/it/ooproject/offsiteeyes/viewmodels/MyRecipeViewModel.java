@@ -16,7 +16,7 @@ import it.ooproject.offsiteeyes.database.entities.RecipeWithIngredientEntity;
 import it.ooproject.offsiteeyes.repository.MyRecipeRepository;
 
 public class MyRecipeViewModel extends AndroidViewModel {
-    private MyRecipeRepository recipeRepository;
+    private final MyRecipeRepository recipeRepository;
     private final LiveData<List<RecipeWithIngredientEntity>> recipes;
 
     public MyRecipeViewModel(Application application) {

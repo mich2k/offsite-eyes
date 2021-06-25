@@ -52,7 +52,7 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
     private ImageView tx;
 
     private String base64Ingredient;
-    private List<String> ingredientList = new ArrayList<>();
+    private final List<String> ingredientList = new ArrayList<>();
 
     private TextInputLayout textInpLMyRecipeTitle;
     private TextInputLayout textInpLMyRecipeProcedure;
