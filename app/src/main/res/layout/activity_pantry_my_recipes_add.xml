@@ -36,7 +36,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/show_my_recipe_activity_title"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -45,13 +45,13 @@
                         android:textColor="@color/white"
                         android:textSize="24sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-                        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-                        app:layout_constraintStart_toEndOf="@+id/imageButton"
-                        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+                        app:layout_constraintBottom_toBottomOf="@+id/cross_btn_exit_show_recipe"
+                        app:layout_constraintEnd_toStartOf="@+id/tick_btn_save_recipe"
+                        app:layout_constraintStart_toEndOf="@+id/cross_btn_exit_show_recipe"
+                        app:layout_constraintTop_toTopOf="@+id/cross_btn_exit_show_recipe" />
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/cross_btn_exit_show_recipe"
                         style="@android:style/Widget.ImageButton"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
@@ -63,15 +63,15 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageButton
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/tick_btn_save_recipe"
                         style="@style/Widget.AppCompat.ImageButton"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
                         android:layout_marginEnd="16dp"
                         android:background="?android:selectableItemBackground"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+                        app:layout_constraintBottom_toBottomOf="@+id/cross_btn_exit_show_recipe"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageButton"
+                        app:layout_constraintTop_toTopOf="@+id/cross_btn_exit_show_recipe"
                         app:srcCompat="@drawable/ic_round_done_24" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -82,13 +82,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/edit_text_titlle_add_recipes"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_text_title_add_recipes"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/edit_text_titlle_add_recipes"
+                app:layout_constraintTop_toTopOf="@+id/edit_text_title_add_recipes"
                 app:srcCompat="@drawable/ic_outline_mode_24" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_text_titlle_add_recipes"
+                android:id="@+id/edit_text_title_add_recipes"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_titlle_add_recipes_textInput"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="47dp"
                     android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -132,19 +132,20 @@
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
                 app:counterEnabled="true"
-                app:counterMaxLength="100"
+                app:counterMaxLength="300"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageButton3"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_titlle_add_recipes">
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_title_add_recipes">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_method_addsd_recipes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top|left"
-                    android:maxLength="100"
-                    android:hint="Preparazione" />
+                    android:hint="Preparazione"
+                    android:maxLength="300" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
@@ -170,7 +171,7 @@
                 android:hint="Note"
                 android:inputType="textMultiLine"
                 app:counterEnabled="true"
-                app:counterMaxLength="100"
+                app:counterMaxLength="300"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -181,7 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"
-                    android:maxLength="100" />
+                    android:maxLength="300" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -252,6 +253,34 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/mandatory_star_element_my_recipes_add"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:text="*"
+                android:textColor="#BA3636"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_text_title_add_recipes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.96"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/mandatory_star_element_my_recipes_add2"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:text="*"
+                android:textColor="#BA3636"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_text_method_add_recipes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.96"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_title_add_recipes"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

@@ -15,6 +15,10 @@
     <!-- OGNI SEZIONE/BLOCCO DI STRINGHE/ID DEVE AVERE IL COMMENTO PER INTESTAZIONE
         CHIAMATO COME LA CLASSE/SETTORE DI RIFERIMENTO -->
 
+    <!-- Universal warning for not respecting mandatory input -->
+
+    <string name="mandatory_text_not_respected">Controlla i campi obbligatori!</string>
+
 
     <!-- Home activity -->
     <string name="home_presentation_text">Benvenuto</string>
@@ -32,6 +36,9 @@
     <string name="home_macro_topic_attraction_title_text">Attrazioni</string>
     <string name="home_macro_topic_attraction_description_text">Descrizione d\'esempio</string>
 
+    <string name="home_macro_topic_about_us_title_text">About Us</string>
+    <string name="home_macro_topic_about_us_description_text">Descrizione d\'esempio</string>
+
     <!-- Pantry activity -->
     <string name="pantry_my_recipes_title">Le mie ricette</string>
     <string name="pantry_meals_title">Ricettario</string>
@@ -42,6 +49,10 @@
     <string name="my_recipes_title_name">title</string>
     <string name="my_recipes_fab_content_description">TODO</string>
 
+    <!-- AddMyRecipe activity -->
+
+    <string name="add_my_recipe_activity_illegal_ingredients">Richiesto almeno un ingrediente!</string>
+
 
     <!--Content description Images -->
     <string name="home_macro_topic_logo_content_description">Logo dell\'applicazione</string>
@@ -49,6 +60,8 @@
     <string name="home_macro_topic_tutorial_icon_content_description">Icona dispensa</string>
     <string name="home_macro_topic_tools_icon_content_description">Icona strumenti</string>
     <string name="home_macro_topic_attraction_icon_content_description">Icona attrazioni</string>
+    <string name="home_macro_topic_about_us_icon_content_description">Icona about us</string>
+
 
 
     <!-- calcs section -->
@@ -59,13 +72,47 @@
     <string name="title_activity_scrolling_calcs">ScrollingActivity</string>
     <string name="calcs_toast_presentation_text">TODO</string>
 
+    <!-- calcs/ washing machine -->
+    <string name="wm_title">Quanto detergente?</string>
+    <string name="wm_subtitle">Calcola il quantitativo corretto (in ml) in base al tuo carico (kg) partendo dal valore base sull etichetta del detergente:</string>
+
+
+
 
     <!-- tutorials section -->
     <string name="tutorials_presentation_text">Benvenuto nella pagina dei Tutorials</string>
+    <string name="tutorials_learn_by_playing_text">Learn by Playing</string>
+    <string name="tutorials_video">Learn by Watching</string>
     <string name="tutorials_toast_presentation_text">TODO</string>
     <string name="title_activity_service_my_recipes">ServiceMyRecipes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- tutorials/ games section -->
+    <string name="games_first_option_title">Arrivo in una nuova città!</string>
+    <string name="games_first_option_subtitle">Come ti comporterai non appena fuori la tua città natale?</string>
+    <string name="games_second_option_title">Una nuova casa</string>
+    <string name="games_second_option_subtitle">Scegliere una casa non è banale, ci riuscirai?</string>
+
+    <!-- Games/Quiz sub-section -->
+    <string name="games_quiz_sub">Seleziona la risposta giusta!</string>
+
+    <!-- about us Section -->
+    <string name="about_title">About us.</string>
+    <string name="about_who_we_are">Chi Siamo</string>
+    <string name="about_why_this_app">Perchè questa app</string>
+    <string name="about_what_we_do">Di cosa ci occupiamo</string>
+
+
+    <!-- Welcome Section -->
+
+    <string name="welcome_title">Benvenuto.</string>
+    <string name="welcome_city_textview">Dicci due cose su di te!</string>
+    <string name="welcome_button_text">Avanti</string>
+
+
+
 
 
 

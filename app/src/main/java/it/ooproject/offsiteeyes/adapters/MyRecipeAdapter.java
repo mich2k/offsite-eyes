@@ -11,8 +11,10 @@ import it.ooproject.offsiteeyes.database.entities.RecipeEntity;
 import it.ooproject.offsiteeyes.database.entities.RecipeWithIngredientEntity;
 
 public class MyRecipeAdapter extends ListAdapter<RecipeWithIngredientEntity, MyRecipeViewHolder> {
-    public MyRecipeAdapter(@NonNull DiffUtil.ItemCallback<RecipeWithIngredientEntity> diffCallback) {
+    MyRecipeViewHolder.OnRecipeListener onRecipeListener;
+    public MyRecipeAdapter(@NonNull DiffUtil.ItemCallback<RecipeWithIngredientEntity> diffCallback, MyRecipeViewHolder.OnRecipeListener onRecipeListener) {
         super(diffCallback);
+        this.onRecipeListener = onRecipeListener;
     }
 
     @NonNull
@@ -40,4 +42,5 @@ public class MyRecipeAdapter extends ListAdapter<RecipeWithIngredientEntity, MyR
                     oldItem.getRecipe().getMethod().equals(newItem.getRecipe().getMethod());
         }
     }
+
 }

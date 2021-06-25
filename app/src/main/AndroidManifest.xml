@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Offsiteeyes.NoActionBar">
+        <activity android:name=".activities.GamesTutorialsActivity" />
         <activity
             android:name=".activities.MyRecipeActivity"
             android:label="MyMealsActivity"
@@ -20,16 +21,35 @@
         <activity
             android:name=".activities.PantryActivity"
             android:label="@string/title_activity_service_my_recipes"
-            android:theme="@style/Theme.Offsiteeyes.NoActionBar"/>
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
             android:name=".activities.AddMyRecipeActivity"
             android:label="@string/title_activity_service_my_recipes"
-            android:theme="@style/Theme.Offsiteeyes.NoActionBar"/>
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
             android:name=".activities.HomeActivity"
             android:label="@string/title_activity_scrolling_calcs"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
-
+        <activity
+            android:name=".tutorials_game.QuizGamesFirstQuiz"
+            android:label="FirstQuiz"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
+        <activity
+            android:name=".activities.TutorialsActivity"
+            android:label="TutorialsActivity"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
+        <activity
+            android:name=".activities.WelcomeActivity"
+            android:label="WelcomeActivity"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
+        <activity
+            android:name=".activities.AppIntroductionActivity"
+            android:label="IntroductionActivity"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
+        <activity
+            android:name=".activities.WashingMachineActivity"
+            android:label="WMActivity"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
             android:name=".activities.ToolsActivity"
             android:label="@string/title_activity_login" />

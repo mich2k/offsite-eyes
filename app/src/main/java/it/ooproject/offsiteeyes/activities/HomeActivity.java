@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import it.ooproject.offsiteeyes.R;
 
@@ -14,34 +15,40 @@ public class HomeActivity extends AppCompatActivity {
     CardView cardViewTutorial;
     CardView cardViewTools;
     CardView cardViewAttraction;
+    CardView cardViewAboutUs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        cardViewPantry = findViewById(R.id.card_view_home_pantry);
-        cardViewTutorial = findViewById(R.id.card_view_pantry_myrecipes);
+        cardViewPantry = findViewById(R.id.card_view_games_first_option);
+        cardViewTutorial = findViewById(R.id.card_view_first_option);
         cardViewTools = findViewById(R.id.card_view_home_tools);
         cardViewAttraction = findViewById(R.id.card_view_home_attraction);
+        cardViewAboutUs = findViewById(R.id.card_view_home_about_us);
 
         cardViewPantry.setOnClickListener(v ->
                 changeActivityOnClickHandler(HomeActivity.this, PantryActivity.class)
         );
 
         cardViewTutorial.setOnClickListener(v ->
-                changeActivityOnClickHandler(HomeActivity.this, AddMyRecipeActivity.class)
+                changeActivityOnClickHandler(HomeActivity.this, TutorialsActivity.class)
         );
 
         cardViewTools.setOnClickListener(v ->
                 changeActivityOnClickHandler(HomeActivity.this, ToolsActivity.class)
         );
 
-        cardViewTools.setOnClickListener(v ->
-                changeActivityOnClickHandler(HomeActivity.this, HomeActivity.class)
-        );
 
         cardViewAttraction.setOnClickListener(v ->
-                changeActivityOnClickHandler(HomeActivity.this, HomeActivity.class)
+                changeActivityOnClickHandler(HomeActivity.this, WelcomeActivity.class)
         );
+
+        cardViewAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // vedere se funziona anche così
+            }
+        });
     }
 
     public void changeActivityOnClickHandler(Context ctx, Class<?> cls) {
