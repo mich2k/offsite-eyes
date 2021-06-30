@@ -107,8 +107,8 @@
 
             <TextView
                 android:id="@+id/textual_result_banner"
-                android:layout_width="352dp"
-                android:layout_height="75dp"
+                android:layout_width="348dp"
+                android:layout_height="117dp"
                 android:gravity="center"
                 android:text="sample"
                 android:textSize="35sp"

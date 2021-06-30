@@ -5,10 +5,14 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import java.util.Hashtable;
 
 import it.ooproject.offsiteeyes.R;
-import it.ooproject.offsiteeyes.tutorials_game.QuizGamesFirstQuiz;
+import it.ooproject.offsiteeyes.tutorials_game.QuizMain;
 
 public class GamesTutorialsActivity extends AppCompatActivity {
     private CardView cardViewFirstQuiz;
@@ -22,21 +26,42 @@ public class GamesTutorialsActivity extends AppCompatActivity {
         cardViewFirstQuiz = findViewById(R.id.card_view_games_first_option);
         cardViewSecondQuiz = findViewById(R.id.card_view_first_option);
 
+
+        Hashtable<Integer, Integer> quizMapValue = new Hashtable<Integer, Integer>();
+
+        quizMapValue.put(cardViewFirstQuiz.getId(), 1);
+        quizMapValue.put(cardViewSecondQuiz.getId(), 2);
+
+
         cardViewFirstQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(GamesTutorialsActivity.this, QuizGamesFirstQuiz.class);
-                intent.putExtra("SELECTED_QUIZ", 1);
+                Intent intent = new Intent(GamesTutorialsActivity.this, QuizMain.class);
+                try{
+                    intent.putExtra("SELECTED_QUIZ", quizMapValue.get(cardViewFirstQuiz.getId()));
+                }catch(NullPointerException e ){
+                    e.printStackTrace();
+                    Log.e("HASH_MAP", "ID not valid");
+                    Toast.makeText(GamesTutorialsActivity.this, "fatal error (hashtable)", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
                 startActivity(intent);
             }
         });
-        // TODO
-        /*cardViewSecondQuiz.setOnClickListener(new View.OnClickListener() {
+
+        cardViewSecondQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(GamesTutorialsActivity.this, QuizGamesSecondQuiz.class);
-                intent.putExtra("SELECTED_QUIZ", 2);
+                Intent intent = new Intent(GamesTutorialsActivity.this, QuizMain.class);
+                try{
+                    intent.putExtra("SELECTED_QUIZ", quizMapValue.get(cardViewSecondQuiz.getId()));
+                }catch(NullPointerException e ){
+                    e.printStackTrace();
+                    Log.e("HASH_MAP", "ID not valid");
+                    Toast.makeText(GamesTutorialsActivity.this, "fatal error (hashtable)", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
 

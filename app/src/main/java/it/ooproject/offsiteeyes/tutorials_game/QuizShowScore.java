@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import it.ooproject.offsiteeyes.R;
-import it.ooproject.offsiteeyes.activities.GamesTutorialsActivity;
 
 public class QuizShowScore extends AppCompatActivity {
     private TextView dynamicQuizTitle;
@@ -32,8 +30,8 @@ public class QuizShowScore extends AppCompatActivity {
         showScore = findViewById(R.id.show_score);
         txtTestualResult = findViewById(R.id.textual_result_banner);
 
-        int scoreValue = QuizGamesFirstQuiz.getScore();
-        int totalQuestions =  QuizGamesFirstQuiz.getQuestionCountTot();
+        int scoreValue = QuizMain.getScore();
+        int totalQuestions =  QuizMain.getQuestionCountTot();
         float scoreRatio = -1;
         String textualResult = "";
 
@@ -43,11 +41,14 @@ public class QuizShowScore extends AppCompatActivity {
 
                 public get method
 
-            i used both, even if is redundant code only for learning scope.
+            i used both, even if is redundant code, only for learning scope.
+
+            EDIT:
+              !!! A hashmap/hashtable data structure has been used to have safe, unique values !!!
          */
 
         // selectedQuizPassed = getIntent().getIntExtra("SELECTED_QUIZ", -1);
-        selectedQuizPassed = QuizGamesFirstQuiz.getSelectedQuizPassed();
+        selectedQuizPassed = QuizMain.getSelectedQuizPassed();
 
 
         switch (selectedQuizPassed){
@@ -69,6 +70,15 @@ public class QuizShowScore extends AppCompatActivity {
 
         }
 
+        try{
+            if ( scoreValue > totalQuestions || scoreValue < 0){
+                throw new IndexOutOfBoundsException("illegal value");
+            }
+        }catch( IndexOutOfBoundsException e){
+            e.printStackTrace();
+            finish();
+        }
+
         try {
             scoreRatio =( (float) scoreValue/totalQuestions);
             if(Float.isNaN(scoreRatio)){
@@ -78,7 +88,8 @@ public class QuizShowScore extends AppCompatActivity {
             e.printStackTrace();
             finish();
         }
-        Toast.makeText(this, "score: " + scoreRatio, Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(this, "score_ratio: " + scoreRatio, Toast.LENGTH_SHORT).show();
 
 
         if( scoreRatio == 1){
@@ -117,8 +128,8 @@ public class QuizShowScore extends AppCompatActivity {
 
         retryQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                QuizGamesFirstQuiz.setScore(0);
-                Intent intent = new Intent(QuizShowScore.this, QuizGamesFirstQuiz.class);
+                QuizMain.setScore(0);
+                Intent intent = new Intent(QuizShowScore.this, QuizMain.class);
                 intent.putExtra("SELECTED_QUIZ", selectedQuizPassed);
                 startActivity(intent);
 

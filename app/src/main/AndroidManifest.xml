@@ -31,7 +31,7 @@
             android:label="@string/title_activity_scrolling_calcs"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
-            android:name=".tutorials_game.QuizGamesFirstQuiz"
+            android:name=".tutorials_game.QuizMain"
             android:label="FirstQuiz"
             android:noHistory="true"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />

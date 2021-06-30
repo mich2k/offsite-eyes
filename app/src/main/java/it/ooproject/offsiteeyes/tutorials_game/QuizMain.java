@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +13,7 @@ import java.util.List;
 
 import it.ooproject.offsiteeyes.R;
 
-public class QuizGamesFirstQuiz extends AppCompatActivity {
+public class QuizMain extends AppCompatActivity {
     private static int selectedQuizPassed;
     private static int score;
     private static int questionCountTot;
@@ -25,6 +24,7 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
     private Button btnOption2;
     private Button btnOption3;
     private Button btnOption4;
+    private Button btnExit;
     private ImageView imageViewBackArrow;
     private TextView dynamicTitle;
 
@@ -40,7 +40,7 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
     }
 
     public static void setScore(int score) {
-        QuizGamesFirstQuiz.score = score;
+        QuizMain.score = score;
     }
 
     public static int getScore() {
@@ -59,6 +59,7 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
         selectedQuizPassed = getIntent().getIntExtra("SELECTED_QUIZ", -1);
 
 
+        btnExit = findViewById(R.id.finish_quiz_activity);
         textViewQuestion = findViewById(R.id.games_question_text_view);
         btnOption1 = findViewById(R.id.option_1);
         btnOption2 = findViewById(R.id.option_2);
@@ -95,6 +96,8 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
                 break;
 
         }
+
+        score = 0;
 
         btnOption1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +136,14 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
         });
         goNextQuestion();
 
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                score = 0;
+                finish();
+            }
+        });
+
     }
 
     private void goNextQuestion(){
@@ -161,7 +172,7 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
     }
 
     private void finishQuiz(){
-        Intent intent = new Intent(QuizGamesFirstQuiz.this, QuizShowScore.class);
+        Intent intent = new Intent(QuizMain.this, QuizShowScore.class);
         intent.putExtra("SELECTED_QUIZ", selectedQuizPassed);
         startActivity(intent);
 
