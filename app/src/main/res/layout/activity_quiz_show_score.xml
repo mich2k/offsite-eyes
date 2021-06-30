@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quiz_React"
+    android:id="@+id/drawer_layout">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/games_quiz_dynamic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#474747"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--<com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                app:cornerRadius="24dp"
+                app:strokeColor="#59CECE"
+                tools:layout_editor_absoluteX="36dp"
+                tools:layout_editor_absoluteY="320dp"></com.google.android.material.button.MaterialButton>
+-->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/finish_activity"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="298dp"
+                android:layout_height="49dp"
+                android:text="Esci"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/games_quiz_score_title"
+                app:layout_constraintVertical_bias="0.65"
+                app:strokeColor="#000000" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/retry_activity"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="298dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="8dp"
+                android:text="Riprova Quiz"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/finish_activity"
+                app:layout_constraintVertical_bias="0.289"
+                app:strokeColor="#000000" />
+
+            <TextView
+                android:id="@+id/games_quiz_score_title"
+                android:layout_width="281dp"
+                android:layout_height="105dp"
+                android:layout_marginBottom="50dp"
+                android:textColor="#474747"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.123" />
+
+            <TextView
+                android:id="@+id/show_score"
+                android:layout_width="154dp"
+                android:layout_height="78dp"
+                android:gravity="center"
+                android:text="Punteggio: "
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/finish_activity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/games_quiz_score_title"
+                app:layout_constraintVertical_bias="0.728" />
+
+            <TextView
+                android:id="@+id/textual_result_banner"
+                android:layout_width="352dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:text="sample"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toTopOf="@+id/show_score"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/games_quiz_score_title"
+                app:layout_constraintVertical_bias="0.666" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+

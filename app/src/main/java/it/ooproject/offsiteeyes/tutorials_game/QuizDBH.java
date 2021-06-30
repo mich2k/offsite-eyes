@@ -28,6 +28,7 @@ public class QuizDBH extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         this.db=db;
         Log.v("DB_TUTORIALS_GAMES", "DB Games Created");
+        db.execSQL("DROP TABLE IF EXISTS " + QuizGamesContract.QuestionsSchema.SCHEMA_NAME);
         final String SQL_CREATE_QUESTIONS_SCHEMA = "CREATE TABLE " + QuizGamesContract.QuestionsSchema.SCHEMA_NAME + " ( "
                 + QuizGamesContract.QuestionsSchema._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 QuizGamesContract.QuestionsSchema.COLUMN_Q + " TEXT, " +
@@ -50,20 +51,15 @@ public class QuizDBH extends SQLiteOpenHelper {
     }
 
     private void fillQuestName(){
-        QuizQuestion q1 = new QuizQuestion("Avanti (A) corretta", "A", "B", "C", "D",1);
-        QuizQuestion q2 = new QuizQuestion("Avanti (A) corretta", "A", "B", "C", "D",3);
-        QuizQuestion q3 = new QuizQuestion("Avanti (A) corretta", "A", "B", "C", "D",2);
-        QuizQuestion q4 = new QuizQuestion("Avanti (A) corretta", "A", "B", "C", "D",2);
-        QuizQuestion q5 = new QuizQuestion("Avanti (A) corretta", "A", "B", "C", "D",1);
-        QuizQuestion q6 = new QuizQuestion("Avanti (A) corretta", "A", "B", "C", "D",2);
-        QuizQuestion q7 = new QuizQuestion("Avanti (A) corretta", "A", "B", "C", "D",4);
+        QuizQuestion q1 = new QuizQuestion("Ancor prima di metter piede si deve pensare al come: auto, treno, aereo... cosa scegli?",
+                "Valuto la distanza, i costi e le opzioni disponibili, scelgo quella con costo/tempo più vantaggioso.", "Pianifico due settimane prima il viaggio e prendo un ticket aereo.", "Nessuna opzione mi rilassa come un viaggio di decine di ore di bus.", "L'auto è l unico mezzo che io possa mai valutare.",1);
+        QuizQuestion q2 = new QuizQuestion("Città sconosciuta.. supermercati, luoghi di incontro, posti di nicchia.. dove ti informi?", "Sono socievole: punto tutto sulla gente del posto.", "Giorni di attenti analisi su qualsiasi info-pagina su internet.", "Cerco di avere più informazioni da più fonti possibili, diversificando.", "Non mi informo, vedrò sul momento!",3);
+        QuizQuestion q3 = new QuizQuestion("Non conosci nessuno: avere amicizie e conoscenze è sempre di aiuto.. come ti comporti?", "Arrivo in città e stringo amicizia con i passanti.", "Entro in tutti i canali social della città, approccio smart!", "Entro in qualche gruppo social, faccio conoscenze a lavoro o in università e in giro.", "Saprò affrontare la mia carriera da solo!",3);
+        QuizQuestion q4 = new QuizQuestion("La nostalgia può farsi sentire e sarà un passo importante saperla affrontare senza essere impulsivi, concordi?", "Sono nato nomade, cittadino del mondo, nulla può spaventarmi!", "Senza i luoghi e le persone della mia infanzia mi sentirei perso, credo che andrò a trovarli domani!", "Cerco di bilanciare la mia carriera, la famiglia e le mie conoscenze nella nuova e vecchia città!", "Credo punterò tutto sui legami nella nuova città!",2);
         addQuestion(q1);
         addQuestion(q2);
         addQuestion(q3);
         addQuestion(q4);
-        addQuestion(q5);
-        addQuestion(q6);
-        addQuestion(q7);
         // anche addQuestion( new QuizQuestion.. );
 
     }
@@ -83,6 +79,7 @@ public class QuizDBH extends SQLiteOpenHelper {
         db = getReadableDatabase();
         Cursor curs = db.rawQuery("SELECT * FROM " + QuizGamesContract.QuestionsSchema.SCHEMA_NAME, null);
         //scorro db
+
         if(curs.moveToFirst()) {
             do {
                 QuizQuestion question = new QuizQuestion();

@@ -33,6 +33,7 @@
         <activity
             android:name=".tutorials_game.QuizGamesFirstQuiz"
             android:label="FirstQuiz"
+            android:noHistory="true"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
             android:name=".activities.TutorialsActivity"
@@ -49,6 +50,11 @@
         <activity
             android:name=".activities.WashingMachineActivity"
             android:label="WMActivity"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
+        <activity
+            android:name=".tutorials_game.QuizShowScore"
+            android:label="Quiz_Score_Result"
+            android:noHistory="true"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
             android:name=".activities.ToolsActivity"

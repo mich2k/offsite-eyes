@@ -88,7 +88,6 @@ public class WashingMachineActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        Toast.makeText(WashingMachineActivity.this, ": " +  ml_equivalent * 2, Toast.LENGTH_SHORT).show();
                         // legit input
 
                         /*

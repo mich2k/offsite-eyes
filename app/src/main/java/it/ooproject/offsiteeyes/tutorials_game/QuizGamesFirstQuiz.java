@@ -1,6 +1,6 @@
 package it.ooproject.offsiteeyes.tutorials_game;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +15,10 @@ import java.util.List;
 import it.ooproject.offsiteeyes.R;
 
 public class QuizGamesFirstQuiz extends AppCompatActivity {
+    private static int selectedQuizPassed;
+    private static int score;
+    private static int questionCountTot;
+
     private TextView textViewQuestion;
     private TextView textViewCurrentQuestionNumber;
     private Button btnOption1;
@@ -22,10 +26,28 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
     private Button btnOption3;
     private Button btnOption4;
     private ImageView imageViewBackArrow;
+    private TextView dynamicTitle;
 
-    private int questionCountTot;
     private int questionCountCurr;
-    private int score;
+
+    public static int getQuestionCountTot() {
+        return questionCountTot;
+    }
+
+
+    public static int getSelectedQuizPassed() {
+        return selectedQuizPassed;
+    }
+
+    public static void setScore(int score) {
+        QuizGamesFirstQuiz.score = score;
+    }
+
+    public static int getScore() {
+        return score;
+    }
+
+
     private QuizQuestion currentQuestion;
 
     private List<QuizQuestion> questionList;
@@ -33,19 +55,46 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_games);
+
+        selectedQuizPassed = getIntent().getIntExtra("SELECTED_QUIZ", -1);
+
+
         textViewQuestion = findViewById(R.id.games_question_text_view);
         btnOption1 = findViewById(R.id.option_1);
         btnOption2 = findViewById(R.id.option_2);
-        btnOption3 = findViewById(R.id.option_3);
+        btnOption3 = findViewById(R.id.finish_activity);
         btnOption4 = findViewById(R.id.option_4);
-        textViewCurrentQuestionNumber = findViewById(R.id.text_view_tutorials_questions_left);
+        textViewCurrentQuestionNumber = findViewById(R.id.show_score);
         imageViewBackArrow = findViewById(R.id.image_view_backarrow_tutorials_game);
+        dynamicTitle = findViewById(R.id.games_quiz_dynamic_title);
 
         questionCountCurr=0;
         QuizDBH dbH = new QuizDBH(this);
         questionList = dbH.getQuestionsList();
         questionCountTot = questionList.size();
-        Toast.makeText(this, "size:" + questionCountTot, Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(this, "size:" + selectedQuizPassed, Toast.LENGTH_SHORT).show();
+
+
+
+        switch (selectedQuizPassed){
+                case 1:
+                dynamicTitle.setText("Arrivo in una nuova città");
+                break;
+
+                case 2:
+                dynamicTitle.setText("Una nuova casa");
+                break;
+
+            default:
+                try {
+                   throw new Exception("illegal intent passed integer value");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+
+        }
 
         btnOption1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +124,13 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
                 goNextQuestion();
             }
         });
+
+        imageViewBackArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         goNextQuestion();
 
     }
@@ -96,16 +152,19 @@ public class QuizGamesFirstQuiz extends AppCompatActivity {
     private void checkGivenAnswer(int answer_number){
         if(answer_number == currentQuestion.getAnswer()){
             score++;
-            showRisult(answer_number);
+            showResult(answer_number);
         }
     }
-    private void showRisult(int answer_number){
-        Toast.makeText(this, "a:" + btnOption1.getTransitionName(), Toast.LENGTH_SHORT).show();
+    private void showResult(int answer_number){
+        //Toast.makeText(this, "a:" + btnOption1.getTransitionName(), Toast.LENGTH_SHORT).show();
 
     }
 
     private void finishQuiz(){
-        finish();
+        Intent intent = new Intent(QuizGamesFirstQuiz.this, QuizShowScore.class);
+        intent.putExtra("SELECTED_QUIZ", selectedQuizPassed);
+        startActivity(intent);
+
     }
 
 }

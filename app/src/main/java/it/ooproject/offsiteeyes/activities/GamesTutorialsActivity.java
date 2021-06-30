@@ -25,6 +25,7 @@ public class GamesTutorialsActivity extends AppCompatActivity {
         cardViewFirstQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(GamesTutorialsActivity.this, QuizGamesFirstQuiz.class);
+                intent.putExtra("SELECTED_QUIZ", 1);
                 startActivity(intent);
             }
         });
@@ -32,6 +33,7 @@ public class GamesTutorialsActivity extends AppCompatActivity {
         /*cardViewSecondQuiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(GamesTutorialsActivity.this, QuizGamesSecondQuiz.class);
+                intent.putExtra("SELECTED_QUIZ", 2);
                 startActivity(intent);
             }
         });*/

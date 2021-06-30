@@ -96,7 +96,7 @@
     <string name="games_second_option_subtitle">Scegliere una casa non è banale, ci riuscirai?</string>
 
     <!-- Games/Quiz sub-section -->
-    <string name="games_quiz_sub">Seleziona la risposta giusta!</string>
+    <string name="games_quiz_sub">Seleziona la risposta giusta:</string>
 
     <!-- about us Section -->
     <string name="about_title">About us.</string>

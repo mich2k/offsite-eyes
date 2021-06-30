@@ -30,7 +30,7 @@ public class DiscoverRecipeViewHolder extends RecyclerView.ViewHolder {
     public static DiscoverRecipeViewHolder create(ViewGroup parent){
         View v = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.row_pantry_discrover_recipes, parent, false);
+                .inflate(R.layout.row_pantry_discover_recipes_autocomplete, parent, false);
 
         return new DiscoverRecipeViewHolder(v);
     }
