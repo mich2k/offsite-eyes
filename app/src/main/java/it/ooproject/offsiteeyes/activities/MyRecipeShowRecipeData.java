@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import it.ooproject.offsiteeyes.R;
 import it.ooproject.offsiteeyes.models.RecipeModel;
 

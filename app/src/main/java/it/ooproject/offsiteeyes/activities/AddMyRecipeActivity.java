@@ -23,16 +23,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import it.ooproject.offsiteeyes.R;
@@ -51,8 +52,7 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
     private ImageButton btnExitAddMyRecipe;
     private ImageView tx;
 
-    private String base64Ingredient;
-    private final List<String> ingredientList = new ArrayList<>();
+    private List<IngredientEntity> ingredientList = new ArrayList<>();
 
     private TextInputLayout textInpLMyRecipeTitle;
     private TextInputLayout textInpLMyRecipeProcedure;
@@ -60,13 +60,15 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
 
     private MyRecipeViewModel myRecipeViewModel;
 
-
     public static Context context;
-
 
     private RecyclerView mRecyclerView;
     private MyRecipeAdapter mAdapter;
 
+    /***
+     *
+     * @param savedInstanceState
+     */
     @SuppressLint("ResourceType")
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,7 +78,7 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
         ingredientLinearLayout = findViewById(R.id.linear_layout_my_recipe_add_list_ingredients);
         btnAddIngredient = findViewById(R.id.button_my_recipe_add_ingredient);
         btnImageIngredient = findViewById(R.id.button_my_recipe_add_image_ingredient);
-        tx = findViewById(R.id.textView2);
+        tx = findViewById(R.id.textview_discover_recipes_title);
         btnSaveRecipe = findViewById(R.id.tick_btn_save_recipe);
         btnExitAddMyRecipe = findViewById(R.id.cross_btn_exit_show_recipe);
         textInpLMyRecipeTitle = findViewById(R.id.edit_text_title_add_recipes);
@@ -85,75 +87,46 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
         myRecipeViewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(MyRecipeViewModel.class);
         context = getApplicationContext();
-
-
         mRecyclerView = findViewById(R.layout.row_pantry_my_recipes_add);
-
-
-
         EditText test = findViewById(R.id.edit_text_titlle_add_recipes_textInput);
 
-        List<IngredientEntity> ingredientList = new ArrayList<>();
 
-        btnSaveRecipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String title, method, note;
-                RecipeEntity r = new RecipeEntity();
-                title = textInpLMyRecipeTitle.getEditText().getText().toString();
-                method = textInpLMyRecipeProcedure.getEditText().getText().toString();
-                note = textInpLMyRecipeNotes.getEditText().getText().toString();
-                Toast.makeText(AddMyRecipeActivity.this, "ci sono " + ingredientLinearLayout.getChildCount() + " figli", Toast.LENGTH_SHORT).show();
-                Toast.makeText(AddMyRecipeActivity.this, " " + ingredientList.get(0).getName(), Toast.LENGTH_SHORT).show();
-                    //TextInputLayout view = (TextInputLayout)ingredientLinearLayout.getChildAt(i);
-
-
-                if (title.length() == 0 || method.length() == 0){
-                    Toast.makeText(AddMyRecipeActivity.this, getResources().getString(R.string.mandatory_text_not_respected), Toast.LENGTH_SHORT).show();
-                }else {
-                    for(short i = 0; i < ingredientLinearLayout.getChildCount(); i+=1){
-                        //EditText curr = (EditText)ingredientLinearLayout.getChildAt(i);
-                        /*if (curr==null){
-                            Toast.makeText(AddMyRecipeActivity.this, "null EditText", Toast.LENGTH_SHORT).show();
-                        }else {
-                            //TextInputLayout a= (TextInputLayout) curr.getParent().getParent();
-                            // View x = findViewById(ingredientList.get(i).getIngredientID());
-                            // TextInputLayout a = (TextInputLayout) findViewById(ingredientList.get(i).getIngredientID()).getParent().getParent().getParent();
-                        }
-                        */
-                            Toast.makeText(AddMyRecipeActivity.this, "inserito: " + ingredientLinearLayout.getChildAt(i).toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    r.setNote(note);
-                    r.setTitle(title);
-                    r.setMethod(method);
-                    myRecipeViewModel.insert(r, ingredientList);   // achtung
-                    finish();
-
-                }
-            });
+        btnSaveRecipe.setOnClickListener(v -> {
+            RecipeEntity recipe = new RecipeEntity(
+                    0,
+                    null,
+                    null,
+                    null,
+                    null
+            );
+            recipe.setNote(textInpLMyRecipeNotes.getEditText().getText().toString());
+            recipe.setTitle(textInpLMyRecipeTitle.getEditText().getText().toString());
+            recipe.setMethod(textInpLMyRecipeProcedure.getEditText().getText().toString());
 
 
-        btnExitAddMyRecipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(AddMyRecipeActivity.this, "La ricetta non verrà salvata", Toast.LENGTH_SHORT).show();
-                finish();
+            for(int i=0; i<ingredientLinearLayout.getChildCount(); i++){
+                LinearLayout linearLayout = (LinearLayout) ingredientLinearLayout.getChildAt(i);
+                TextInputLayout textInputLayout = (TextInputLayout) linearLayout.getChildAt(0);
+                TextInputEditText editText = (TextInputEditText) textInputLayout.getChildAt(0);
+
+                System.out.println(editText.getText());
             }
+
+
+            myRecipeViewModel.insert(recipe, ingredientList);
+            finish();
+
         });
 
-        //btnAddIngredient.setOnClickListener(this::addIngredientView);
 
-        btnAddIngredient.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                IngredientEntity ingredientElement = new IngredientEntity();
-                ingredientList.add(ingredientElement);
-                View ingredientRowId = addIngredientView(v);
-                //ingredientElement.setIngredientID(ingredientRowId.getId());
+        btnExitAddMyRecipe.setOnClickListener(v -> {
+            Toast.makeText(AddMyRecipeActivity.this, "La ricetta non verrà salvata", Toast.LENGTH_SHORT).show();
+            finish();
+        });
 
 
-            }
+        btnAddIngredient.setOnClickListener(v -> {
+            View ingredientRowId = addIngredientView(v);
         });
 
 
@@ -171,27 +144,34 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
     }
 
 
+    /***
+     *
+     * @param v
+     * @return
+     */
     private View addIngredientView(View v){
         @SuppressLint("InflateParams")
-        final View ingredientRowView = getLayoutInflater().inflate(R.layout.row_pantry_my_recipes_add, null, false);
-        ImageButton btnRemoveIngredient = ingredientRowView.findViewById(R.id.image_btn_row_remove_ingredient);
+        final View ingredientRowView = getLayoutInflater().
+                inflate(R.layout.row_pantry_my_recipes_add, null, false);
+        ImageButton btnRemoveIngredient = ingredientRowView.
+                findViewById(R.id.image_btn_row_remove_ingredient);
 
-        btnRemoveIngredient.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                removeIngredientView(ingredientRowView);
-            }
-        });
-
-
+        btnRemoveIngredient.setOnClickListener(v1 -> removeIngredientView(ingredientRowView));
         ingredientLinearLayout.addView(ingredientRowView);
         return ingredientRowView;
     }
 
+    /***
+     *
+     * @param view
+     */
     private void removeIngredientView(View view){
         ingredientLinearLayout.removeView(view);
     }
 
+    /***
+     *
+     */
     private void selectIngredientImage() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
@@ -199,6 +179,12 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
         startActivityForResult(Intent.createChooser(intent, "Scegli un immagine"), 100);
     }
 
+    /***
+     *
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -208,6 +194,12 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
             Toast.makeText(getApplicationContext(), "Permesso negato", Toast.LENGTH_SHORT).show();
     }
 
+    /***
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -221,7 +213,7 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     bmap.compress(Bitmap.CompressFormat.JPEG, 40, stream);
                     byte[] bytes = stream.toByteArray();
-                    base64Ingredient = Base64.encodeToString(bytes, Base64.DEFAULT);
+                    String base64Ingredient = Base64.encodeToString(bytes, Base64.DEFAULT);
 
                     btnImageIngredient.setClickable(false);
                 } catch (FileNotFoundException e) {
@@ -231,6 +223,4 @@ public class AddMyRecipeActivity extends AppCompatActivity  {
         }
 
     }
-
-
 }

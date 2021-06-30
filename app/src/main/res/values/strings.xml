@@ -25,13 +25,21 @@
     <string name="home_subtitle_text"> Sottotitolo </string>
 
     <string name="home_macro_topic_pantry_title_text">La tua dispensa</string>
-    <string name="home_macro_topic_pantry_description_text">Descrizione d\'esempio</string>
+    <string name="home_macro_topic_pantry_description_text">
+        Crea, Salva, Consulta tutte le tue ricette e quelle di tutto il mondo
+    </string>
 
     <string name="home_macro_topic_tutorial_title_text">Tutorials</string>
-    <string name="home_macro_topic_tutorial_description_text">Descrizione d\'esempio</string>
+    <string name="home_macro_topic_tutorial_description_text">
+        Preparati ad imparare in un modo quelle piccole skills utili nella
+        vita di tutti i giorni
+    </string>
 
     <string name="home_macro_topic_tools_title_text">Strumenti</string>
-    <string name="home_macro_topic_tools_description_text">Descrizione d\'esempio</string>
+    <string name="home_macro_topic_tools_description_text">
+        Usiamo la tecnologia in modo intelligente ecco alcuni strumenti utili
+        nella vita di tutti i giorni
+    </string>
 
     <string name="home_macro_topic_attraction_title_text">Attrazioni</string>
     <string name="home_macro_topic_attraction_description_text">Descrizione d\'esempio</string>

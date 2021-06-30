@@ -2,11 +2,10 @@ package it.ooproject.offsiteeyes.repository;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import it.ooproject.offsiteeyes.api.FoodApiInterface;
 import it.ooproject.offsiteeyes.api.FoodApiService;
 import it.ooproject.offsiteeyes.api.response.ListRecipesResponse;
@@ -21,11 +20,17 @@ import retrofit2.Response;
 
 public class DiscoverRecipeRepository {
     private final FoodApiInterface foodApi = FoodApiService.getApiService(FoodApiInterface.class);
-    private List<RecipeModel> recipeModelList;
-    private final LiveData<List<RecipeModel>> liveData = new MutableLiveData<>();
+    private List<RecipeModel> recipeModelList = new ArrayList<>();
+    private final MutableLiveData<List<RecipeModel>> liveData = new MutableLiveData<>();
 
-    public LiveData<List<RecipeModel>> getRecipeList(int number){
-        Call<ListRecipesResponse> responseCall = foodApi.listRecipes(Util.API_KEY, number);
+    /**
+     *
+     * @param number
+     * @param offset
+     * @return
+     */
+    public MutableLiveData<List<RecipeModel>> getRecipeList(int number, int offset){
+        Call<ListRecipesResponse> responseCall = foodApi.listRecipes(Util.API_KEY, number, offset);
 
         responseCall.enqueue(new Callback<ListRecipesResponse>() {
             @Override
@@ -33,21 +38,25 @@ public class DiscoverRecipeRepository {
                                    @NotNull Response<ListRecipesResponse> response) {
                 if(response.code() == Util.HTTP_STATUS_OK_CODE){
                     ListRecipesResponse res = response.body();
-                    if(res != null) {
-                        //bind recipesModel to liveData
-                    }
+                    liveData.setValue(res.getRecipes());
                 }
             }
 
             @Override
             public void onFailure(@NotNull Call<ListRecipesResponse> call, @NotNull Throwable t) {
-                t.printStackTrace();
+                liveData.setValue(null);
             }
         });
 
-        return null;
+        return liveData;
     }
 
+    /**
+     *
+     * @param query
+     * @param number
+     * @return
+     */
     public List<IngredientModel> autoCompleteIngredients(String query, int number){
         Call<List<IngredientModel>> responseCall = foodApi.autoCompleteIngredient(
                 Util.API_KEY,
@@ -76,16 +85,21 @@ public class DiscoverRecipeRepository {
         return null;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public RecipeDetailModel getRecipeById(int id){
         Call<RecipeDetailModel> responseCall = foodApi.recipeDetail(id, Util.API_KEY, false);
         responseCall.enqueue(new Callback<RecipeDetailModel>() {
             @Override
-            public void onResponse(Call<RecipeDetailModel> call, Response<RecipeDetailModel> response) {
+            public void onResponse(@NotNull Call<RecipeDetailModel> call, @NotNull Response<RecipeDetailModel> response) {
 
             }
 
             @Override
-            public void onFailure(Call<RecipeDetailModel> call, Throwable t) {
+            public void onFailure(@NotNull Call<RecipeDetailModel> call, @NotNull Throwable t) {
                 t.printStackTrace();
             }
         });
@@ -95,16 +109,22 @@ public class DiscoverRecipeRepository {
 
     }
 
+    /**
+     *
+     * @param ingredients
+     * @param number
+     * @return
+     */
     public List<RecipeModel> findRecipesByIngredients(String ingredients, int number){
         Call<List<RecipeModel>> responseCall = foodApi.findRecipeByIngredient(Util.API_KEY, ingredients, number);
         responseCall.enqueue(new Callback<List<RecipeModel>>() {
             @Override
-            public void onResponse(Call<List<RecipeModel>> call, Response<List<RecipeModel>> response) {
+            public void onResponse(@NotNull Call<List<RecipeModel>> call, @NotNull Response<List<RecipeModel>> response) {
                 System.out.println(response);
             }
 
             @Override
-            public void onFailure(Call<List<RecipeModel>> call, Throwable t) {
+            public void onFailure(@NotNull Call<List<RecipeModel>> call, @NotNull Throwable t) {
                 t.printStackTrace();
             }
         });

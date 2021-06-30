@@ -19,35 +19,36 @@ public class MyRecipeRepository {
     private final RecipeDao recipeDao;
     private final LiveData<List<RecipeWithIngredientEntity>> recipes;
 
-
+    /**
+     *
+     * @param application
+     */
     public MyRecipeRepository(Application application) {
         MyRecipeDB db = MyRecipeDB.getDatabase(application);
         recipeDao = db.recipeDao();
         recipes = recipeDao.getRecipesWithIngredient();
     }
 
+    /**
+     *
+     * @return
+     */
     public LiveData<List<RecipeWithIngredientEntity>> getRecipes() {
         return recipes;
     }
 
+    /**
+     *
+     * @param recipe
+     * @param ingredients
+     */
     public void insert(RecipeEntity recipe, List<IngredientEntity> ingredients) {
         MyRecipeDB.getDatabaseWriteExecutor().execute(() ->{
             long lastRecipeId = recipeDao.insert(recipe);
             for(IngredientEntity i: ingredients){
-                long x = recipeDao.insertIngredient(i);
-
-                Log.v("omar", "last inserted id ingredient: " + x);
+                long lastIngredientId = recipeDao.insertIngredient(i);
+                recipeDao.insertRecipeIngredient(lastIngredientId, lastRecipeId);
             }
-
-            //long[] lastIdIngredients = recipeDao.insertIngredients(ingredients);
-
-            /*for(long i=0; i<lastIdIngredients.length; i++){
-                RecipeIngredientCrossRefEntity ref = new RecipeIngredientCrossRefEntity();
-                ref.setIngredientID((int) lastIdIngredients[(int) i]);
-                ref.setRecipeID((int) lastRecipeId);
-                recipeDao.insertRecipeWithIngredient(ref);
-            }*/
-
         });
     }
 }

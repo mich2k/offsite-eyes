@@ -36,7 +36,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/show_my_recipe_activity_title"
+                        android:id="@+id/my_recipe_activity_title"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -244,7 +244,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/textView2"
+                android:id="@+id/textview_discover_recipes_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

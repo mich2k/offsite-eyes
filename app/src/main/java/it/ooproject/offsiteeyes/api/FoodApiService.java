@@ -4,9 +4,21 @@ import it.ooproject.offsiteeyes.utils.Util;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
+/**
+ * FoodApiService is a singleton pattern class. This means that in the complete
+ * application there will be only one object of the FoodApiService class. This
+ * fact allows to create a unique and secure way to access to the FoodApi REST
+ * service with retrofit library
+ */
 public class FoodApiService {
     private static Retrofit retrofit = null;
+
+    /**
+     *
+     * @param serviceClass service public interface containing the endpoints
+     * @param <ServiceApi>
+     * @return
+     */
     public static <ServiceApi> ServiceApi getApiService(Class<ServiceApi> serviceClass) {
         if(retrofit == null) {
             retrofit = new Retrofit
@@ -16,10 +28,6 @@ public class FoodApiService {
                     .build();
         }
 
-        return FoodApiService.createService(serviceClass);
-    }
-
-    private static <ServiceApi> ServiceApi createService(Class<ServiceApi> serviceClass){
         return retrofit.create(serviceClass);
     }
 }

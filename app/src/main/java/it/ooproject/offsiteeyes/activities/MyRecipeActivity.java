@@ -12,18 +12,25 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
+import it.ooproject.offsiteeyes.database.entities.RecipeWithIngredientEntity;
 import it.ooproject.offsiteeyes.viewholder.MyRecipeViewHolder;
 import it.ooproject.offsiteeyes.R;
 import it.ooproject.offsiteeyes.adapters.MyRecipeAdapter;
 import it.ooproject.offsiteeyes.models.RecipeModel;
 import it.ooproject.offsiteeyes.viewmodels.MyRecipeViewModel;
 
+/***
+ *
+ */
+public class MyRecipeActivity extends AppCompatActivity {
+    MyRecipeViewModel myRecipeViewModel;
+    FloatingActionButton fab;
+    Context context;
 
-public class MyRecipeActivity extends AppCompatActivity implements MyRecipeViewHolder.OnRecipeListener {
-    private MyRecipeViewModel myRecipeViewModel;
-    private FloatingActionButton fab;
-    private Context context;
-
+    /***
+     *
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +40,8 @@ public class MyRecipeActivity extends AppCompatActivity implements MyRecipeViewH
 
         RecyclerView myRecipeRecyclerView;
         myRecipeRecyclerView = findViewById(R.id.recycler_view_myrecipes);
-        final MyRecipeAdapter myRecipeAdapter = new MyRecipeAdapter(new MyRecipeAdapter.MyRecipeDiff(), this);
+        MyRecipeAdapter myRecipeAdapter = new MyRecipeAdapter(new MyRecipeAdapter.MyRecipeDiff());
+
 
         myRecipeRecyclerView.setAdapter(myRecipeAdapter);
         myRecipeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -42,37 +50,18 @@ public class MyRecipeActivity extends AppCompatActivity implements MyRecipeViewH
         myRecipeViewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(MyRecipeViewModel.class);
 
-        myRecipeViewModel.getRecipes().observe(this, list -> {
-            myRecipeAdapter.submitList(list);
-            //Toast.makeText(this, "sel: " + list.get(1).getRecipe().getTitle(), Toast.LENGTH_SHORT).show();
-
-
-        });
+        myRecipeViewModel.getRecipes().observe(this, myRecipeAdapter::submitList);
 
         fab.setOnClickListener(v -> {
             startActivity(new Intent(MyRecipeActivity.this, AddMyRecipeActivity.class));
         });
 
+        myRecipeAdapter.setOnItemListener(recipeWithIngredient -> {
+            System.out.println("ciao");
+            Intent intent = new Intent(MyRecipeActivity.this, MyRecipeDetailActivity.class);
+            intent.putExtra("recipeWithIngredient", recipeWithIngredient);
+            startActivity(intent);
+        });
 
-        /*
-        *   IngredientEntity i = new IngredientEntity();
-            i.setName("pasta");
-
-            RecipeEntity r = new RecipeEntity();
-            r.setTitle("Pasta al Ragu bolognese");
-            r.setMethod("...");
-
-            List<IngredientEntity> l = new ArrayList<>();
-            l.add(i);
-
-            myRecipeViewModel.insert(r, l);
-        * */
-    }
-
-    @Override
-    public void onRecipeListener(int position) {
-        myRecipeViewModel.getRecipes().getValue().get(position);
-        Intent intent = new Intent(this, MyRecipeShowRecipeData.class);
-        startActivity(intent);
     }
 }

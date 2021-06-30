@@ -10,7 +10,7 @@ import it.ooproject.offsiteeyes.models.RecipeModel;
 import it.ooproject.offsiteeyes.viewholder.DiscoverRecipeViewHolder;
 
 public class DiscoverRecipeAdapter extends ListAdapter<RecipeModel, DiscoverRecipeViewHolder> {
-    protected DiscoverRecipeAdapter(@NonNull DiffUtil.ItemCallback<RecipeModel> diffCallback) {
+    public DiscoverRecipeAdapter(@NonNull DiffUtil.ItemCallback<RecipeModel> diffCallback) {
         super(diffCallback);
     }
 

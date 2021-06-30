@@ -13,7 +13,5 @@ public class AboutUsActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
-
-
     }
 }

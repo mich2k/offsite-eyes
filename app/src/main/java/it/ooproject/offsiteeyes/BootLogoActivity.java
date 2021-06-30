@@ -9,20 +9,19 @@ import android.view.animation.AnimationUtils;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import it.ooproject.offsiteeyes.activities.HomeActivity;
+import it.ooproject.offsiteeyes.database.entities.IngredientEntity;
 
 /**
- * name       : BootLogoActivity
- * description: BootLogoActivity is a class activity that shows a nice loading of application data
+ * <p>BootLogoActivity is a class activity that shows a nice loading of application data
+ * (splashscreen activity)</p>
  *
  * */
 public class BootLogoActivity extends AppCompatActivity {
 
-    /***
-     * method       : onCreate
-     * description: this method is called when you initialize the activity. In this method we
-     *              initialize window settings and bind xml resource layout with the activity.
-     *              After the activity consumes the animation, it change the context to the
-     *              HomeActivity
+    /**
+     * <p>this method is called when you initialize the activity. In this method we initialize
+     * window settings and bind xml resource layout with the activity. After the activity consumes
+     * the animation, it change the context to the HomeActivity</p>
      *
      * @param savedInstanceState contains the data that is saved with onSaveInstanceState(Bundle)
      */
@@ -33,7 +32,6 @@ public class BootLogoActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(BootLogoActivity.this, R.color.prova));
         setContentView(R.layout.activity_bootlogo);
         AnimationUtils.loadAnimation(this, R.anim.boot_animation);
-
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             Intent afterLogo = new Intent(BootLogoActivity.this, HomeActivity.class);
