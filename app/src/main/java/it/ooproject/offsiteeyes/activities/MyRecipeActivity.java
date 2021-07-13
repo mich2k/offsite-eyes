@@ -59,7 +59,7 @@ public class MyRecipeActivity extends AppCompatActivity {
 
         myRecipeAdapter.setOnItemListener(recipeWithIngredient -> {
             System.out.println("ciao");
-            Intent intent = new Intent(MyRecipeActivity.this, DiscoverRecipeRepository.class);
+            Intent intent = new Intent(MyRecipeActivity.this, MyRecipeDetailActivity.class);
             intent.putExtra("recipeWithIngredient", recipeWithIngredient);
             startActivity(intent);
         });
