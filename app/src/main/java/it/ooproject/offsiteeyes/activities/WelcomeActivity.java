@@ -22,7 +22,7 @@ import it.ooproject.offsiteeyes.R;
 
 /**
  * <p>This activity is shown only on first boot, in this version of the app
- * it collects the city of interest and the name of the user, this wants to
+ * it collects the city of interest and the name of the user, its focus is to
  * create a dynamic behaviour.
  * These data can be useful in future potential releases or also only for concept.
  * These data can also improve the potential ux/p>
@@ -63,15 +63,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
         welcomeSharedPrefData = getSharedPreferences("WelcomeActivity", 0);
 
-
-            if (welcomeSharedPrefData.getString("Welcome_User_City", "").equals("") == false ||
-                welcomeSharedPrefData.getString("Welcome_User_Name", "").equals("") == false){
-
-            userWelcomeName = welcomeSharedPrefData.getString("Welcome_User_City", "");
-            userWelcomeCity = welcomeSharedPrefData.getString("Welcome_User_Name", "");
-            changeActivityOnClickHandler(getApplicationContext(), HomeActivity.class);
-
-        }
 
         setContentView(R.layout.activity_welcome);
 
@@ -123,11 +114,11 @@ public class WelcomeActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = welcomeSharedPrefData.edit();
         userWelcomeCity = txteditCity.toString();
         userWelcomeName = txteditName.toString();
-        Toast.makeText(this, "" + userWelcomeCity + userWelcomeName, Toast.LENGTH_SHORT).show();
 
 
         editor.putString("Welcome_User_City", userWelcomeCity);
         editor.putString("Welcome_User_Name", userWelcomeName);
+        editor.putBoolean("First_Boot", false);
 
         if(editor.commit() != true){
             throw new RuntimeException();

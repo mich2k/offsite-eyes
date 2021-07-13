@@ -1,16 +1,17 @@
 package it.ooproject.offsiteeyes;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
 import android.os.Looper;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import it.ooproject.offsiteeyes.activities.HomeActivity;
 import it.ooproject.offsiteeyes.activities.WelcomeActivity;
-import it.ooproject.offsiteeyes.database.entities.IngredientEntity;
 
 /**
  * <p>BootLogoActivity is a class activity that shows a nice loading of application data
@@ -34,11 +35,22 @@ public class BootLogoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bootlogo);
         AnimationUtils.loadAnimation(this, R.anim.boot_animation);
 
+
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
 
 
+            SharedPreferences welcomeSharedPrefData = this.getSharedPreferences("WelcomeActivity", 0);
+            boolean isFirstBoot = welcomeSharedPrefData.getBoolean("First_Boot", true);
 
-            Intent afterLogo = new Intent(BootLogoActivity.this, WelcomeActivity.class);
+            Intent afterLogo;
+
+            if(isFirstBoot == true){
+                afterLogo = new Intent(BootLogoActivity.this, WelcomeActivity.class);
+            }else{
+                afterLogo = new Intent(BootLogoActivity.this, HomeActivity.class);
+            }
+
+
             startActivity(afterLogo);
             overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             finish();
