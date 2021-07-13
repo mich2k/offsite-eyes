@@ -118,8 +118,6 @@ public class WashingMachineActivity extends AppCompatActivity {
 
                         try {
                             switch (Integer.parseInt((String) radioButtonSelected.getHint())) {
-                                case 1:
-                                    break;
                                 case 2:
                                     result += (ml_equivalent * 6)/5;
                                     break;

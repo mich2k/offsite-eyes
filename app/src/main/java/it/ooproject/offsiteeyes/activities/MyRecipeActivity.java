@@ -13,6 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import it.ooproject.offsiteeyes.database.entities.RecipeWithIngredientEntity;
+import it.ooproject.offsiteeyes.repository.DiscoverRecipeRepository;
 import it.ooproject.offsiteeyes.viewholder.MyRecipeViewHolder;
 import it.ooproject.offsiteeyes.R;
 import it.ooproject.offsiteeyes.adapters.MyRecipeAdapter;
@@ -58,7 +59,7 @@ public class MyRecipeActivity extends AppCompatActivity {
 
         myRecipeAdapter.setOnItemListener(recipeWithIngredient -> {
             System.out.println("ciao");
-            Intent intent = new Intent(MyRecipeActivity.this, MyRecipeDetailActivity.class);
+            Intent intent = new Intent(MyRecipeActivity.this, DiscoverRecipeRepository.class);
             intent.putExtra("recipeWithIngredient", recipeWithIngredient);
             startActivity(intent);
         });

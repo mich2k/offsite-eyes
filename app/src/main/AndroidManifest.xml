@@ -46,6 +46,7 @@
         <activity
             android:name=".activities.WelcomeActivity"
             android:label="WelcomeActivity"
+            android:noHistory="true"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
             android:name=".activities.AppIntroductionActivity"

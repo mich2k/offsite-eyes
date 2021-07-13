@@ -2,9 +2,12 @@ package it.ooproject.offsiteeyes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import it.ooproject.offsiteeyes.R;
 
 /**
@@ -20,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     CardView cardViewAboutUs;
 
 
+
     /***
      * method     : onCreate
      * description: This method is called when you initialize the activity. In this method we bind
@@ -28,15 +32,21 @@ public class HomeActivity extends AppCompatActivity {
      *
      * @param savedInstanceState contains the data that is saved with onSaveInstanceState(Bundle)
      */
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         cardViewPantry = findViewById(R.id.card_view_games_first_option);
         cardViewTutorial = findViewById(R.id.card_view_first_option);
         cardViewTools = findViewById(R.id.card_view_home_tools);
         cardViewAttraction = findViewById(R.id.card_view_home_attraction);
         cardViewAboutUs = findViewById(R.id.card_view_home_about_us);
+
+
 
         cardViewPantry.setOnClickListener(v ->
                 changeActivityOnClickHandler(HomeActivity.this, PantryActivity.class)

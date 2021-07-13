@@ -2,6 +2,7 @@ package it.ooproject.offsiteeyes.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,6 +19,20 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import it.ooproject.offsiteeyes.R;
 
+
+/**
+ * <p>This activity is shown only on first boot, in this version of the app
+ * it collects the city of interest and the name of the user, this wants to
+ * create a dynamic behaviour.
+ * These data can be useful in future potential releases or also only for concept.
+ * These data can also improve the potential ux/p>
+ *
+ * {@link #getUserWelcomeCity() returns the user city gave by input at first boot}
+ * {@link #getUserWelcomeName() returns the user name gave by input at first boot}
+ *
+ */
+
+
 // https://maps.googleapis.com/maps/api/place/photo?maxwidth=1080&maxheight=1920&photoreference=ATtYBwIHWe9IsyuzCFWC98yus7LeOmZPk7_Q7ZrrKSCZPYrMxoeJnDd8aNIzrdtN6kliW745Qiw3zvmXFd2afP4T2fIRVc414UYpt5DAOcshngwUgI6HTo7cv7ZduwvBS9Nxq_Roh0bucVvMh1Frgq3vWyC9qSv7SIEGzd2_wTO_0UbQmQbf&key=AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g
 
 // https://maps.googleapis.com/maps/api/place/photo?maxwidth=1080&maxheight=1920&photoreference=ATtYBwIGXHSFnYqiYq6mD-uloybmRgEJnVGdj8PFmVngJaPczhQk5xedQNs19rofDOjZSlG5LKkD43qVt-GKS07KlD9WY5CkOyNdmklGhmV55J4kySGg_fMrvJK6PYI_Gux5gfRVIaXiv4jdP5lJbfu2LCFCkU4i0cjUEvJ5gvvIA4g0GtFO&key=AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g
@@ -27,35 +42,74 @@ public class WelcomeActivity extends AppCompatActivity {
     private TextInputLayout textInputName;
     private Button btnNext;
     private RequestQueue reqQueue;
-    private Editable city;
-    private Editable name;
+    private Editable txteditCity;
+    private Editable txteditName;
+    private SharedPreferences welcomeSharedPrefData;
+    private static String userWelcomeName;
+    private static String userWelcomeCity;
+
+    public static String getUserWelcomeName() {
+        return userWelcomeName;
+    }
+
+    public static String getUserWelcomeCity() {
+        return userWelcomeCity;
+    }
+
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        welcomeSharedPrefData = getSharedPreferences("WelcomeActivity", 0);
+
+
+            if (welcomeSharedPrefData.getString("Welcome_User_City", "").equals("") == false ||
+                welcomeSharedPrefData.getString("Welcome_User_Name", "").equals("") == false){
+
+            userWelcomeName = welcomeSharedPrefData.getString("Welcome_User_City", "");
+            userWelcomeCity = welcomeSharedPrefData.getString("Welcome_User_Name", "");
+            changeActivityOnClickHandler(getApplicationContext(), HomeActivity.class);
+
+        }
+
         setContentView(R.layout.activity_welcome);
+
+
+
         btnNext = findViewById(R.id.btn_wmachine_calculate);
 
         textInputCityOfArrival = findViewById(R.id.txtInput_3);
         textInputName = findViewById(R.id.text_input_welcome_name);
-        textInputCityOfArrival.getEditText().setText(city);
+        textInputCityOfArrival.getEditText().setText(txteditCity);
 
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                city = textInputCityOfArrival.getEditText().getText();
-                name = textInputName.getEditText().getText();
-                if(city.length() == 0 || name.length() == 0){
+                txteditCity = textInputCityOfArrival.getEditText().getText();
+                txteditName = textInputName.getEditText().getText();
+                if(txteditCity.length() == 0 || txteditName.length() == 0){
                     Toast.makeText(WelcomeActivity.this, "Questi due campi non possono essere vuoti", Toast.LENGTH_SHORT).show();
 
                 }else {
-                    if(city.chars().allMatch(Character::isLetter) && name.chars().allMatch(Character::isLetter)) {
+                    if(txteditCity.chars().allMatch(Character::isLetter) && txteditName.chars().allMatch(Character::isLetter)) {
                         Intent intent = new Intent(WelcomeActivity.this, AppIntroductionActivity.class);
                         intent.putExtra("city_arrival_name", textInputCityOfArrival.getEditText().getText());
                         intent.putExtra("user_name", textInputName.getEditText().getText());
-                        changeActivityOnClickHandler(getApplicationContext(), AppIntroductionActivity.class);
+
+                        try
+                        {
+                            saveData();
+                        }catch(Exception e){
+                            e.printStackTrace();
+                            Toast.makeText(WelcomeActivity.this, "fatal error (sharedPreferences)", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+
+                        changeActivityOnClickHandler(getApplicationContext(), HomeActivity.class);
                     }else{
                         Toast.makeText(WelcomeActivity.this, "Non sono accettati numeri/simboli", Toast.LENGTH_SHORT).show();
                     }
@@ -63,6 +117,24 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void saveData() throws RuntimeException{
+
+        SharedPreferences.Editor editor = welcomeSharedPrefData.edit();
+        userWelcomeCity = txteditCity.toString();
+        userWelcomeName = txteditName.toString();
+        Toast.makeText(this, "" + userWelcomeCity + userWelcomeName, Toast.LENGTH_SHORT).show();
+
+
+        editor.putString("Welcome_User_City", userWelcomeCity);
+        editor.putString("Welcome_User_Name", userWelcomeName);
+
+        if(editor.commit() != true){
+            throw new RuntimeException();
+        }
+
+    }
+
 
     public void changeActivityOnClickHandler(Context ctx, Class<?> cls) {
         startActivity(new Intent(ctx, cls));

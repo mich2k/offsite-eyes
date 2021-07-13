@@ -96,7 +96,7 @@ public class QuizDBH extends SQLiteOpenHelper {
                 q3 = new QuizQuestion("La vita fuorisede pone molti compromessi, tra cui anche la condivisione di uno spazio riservato come la casa, ne sei pronto?",
                         "Assolutamente no, a tutti i costi un monolocale, anche se fatiscente!.",
                         "Certo! Sarà divertente.",
-                        "Certo! Un'opportunità per fare conoscenze e spendere di meno, anche se sono consapevole che non sarà sempre rose e fiori.",
+                        "Certo! Un'opportunità per fare conoscenze e spendere di meno, so che non va sempre bene.",
                         "Vivrò condiviso solo per questione economica: tratterò i coinquilini da coinquilini.",
                         3);
                 q4 = new QuizQuestion("Visiti la casa col proprietario o l'agente immobiliare, cosa controlli?",

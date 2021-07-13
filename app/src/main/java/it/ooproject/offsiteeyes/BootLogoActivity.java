@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import it.ooproject.offsiteeyes.activities.HomeActivity;
+import it.ooproject.offsiteeyes.activities.WelcomeActivity;
 import it.ooproject.offsiteeyes.database.entities.IngredientEntity;
 
 /**
@@ -34,7 +35,10 @@ public class BootLogoActivity extends AppCompatActivity {
         AnimationUtils.loadAnimation(this, R.anim.boot_animation);
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Intent afterLogo = new Intent(BootLogoActivity.this, HomeActivity.class);
+
+
+
+            Intent afterLogo = new Intent(BootLogoActivity.this, WelcomeActivity.class);
             startActivity(afterLogo);
             overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             finish();
