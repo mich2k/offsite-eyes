@@ -38,22 +38,44 @@ import it.ooproject.offsiteeyes.R;
 // https://maps.googleapis.com/maps/api/place/photo?maxwidth=1080&maxheight=1920&photoreference=ATtYBwIGXHSFnYqiYq6mD-uloybmRgEJnVGdj8PFmVngJaPczhQk5xedQNs19rofDOjZSlG5LKkD43qVt-GKS07KlD9WY5CkOyNdmklGhmV55J4kySGg_fMrvJK6PYI_Gux5gfRVIaXiv4jdP5lJbfu2LCFCkU4i0cjUEvJ5gvvIA4g0GtFO&key=AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g
 // https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Napoli+Posillipo&inputtype=textquery&fields=photos,formatted_address,name&locationbias&key=AIzaSyAdDc5y6sbN-3Vk65MkNx0w62MjZXQHA4g
 public class WelcomeActivity extends AppCompatActivity {
+    private static SharedPreferences welcomeSharedPrefData;
     private TextInputLayout textInputCityOfArrival;
     private TextInputLayout textInputName;
     private Button btnNext;
-    private RequestQueue reqQueue;
     private Editable txteditCity;
     private Editable txteditName;
-    private SharedPreferences welcomeSharedPrefData;
     private static String userWelcomeName;
     private static String userWelcomeCity;
 
-    public static String getUserWelcomeName() {
-        return userWelcomeName;
+
+    public static String getUserWelcomeName(Context ctx) {
+        welcomeSharedPrefData =  ctx.getSharedPreferences("WelcomeActivity",0);
+        String ret;
+        try{
+            ret =  welcomeSharedPrefData.getString("Welcome_User_Name", "Err");
+
+        }catch(Exception e){
+            return "null";
+        }
+        if (ret.equals("Err")){
+            return "null";
+        }else
+            return ret;
     }
 
-    public static String getUserWelcomeCity() {
-        return userWelcomeCity;
+    public static String getUserWelcomeCity(Context ctx) {
+        welcomeSharedPrefData =  ctx.getSharedPreferences("WelcomeActivity",0);
+        String ret;
+        try{
+            ret =  welcomeSharedPrefData.getString("Welcome_User_City", "Err");
+
+        }catch(Exception e){
+            return "null";
+        }
+        if (ret.equals("Err")){
+            return "null";
+        }else
+            return ret;
     }
 
 

@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import it.ooproject.offsiteeyes.R;
 
@@ -20,6 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     CardView cardViewTools;
     CardView cardViewAttraction;
     CardView cardViewAboutUs;
+    TextView txtViewShowMyName;
 
 
 
@@ -39,11 +41,16 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        txtViewShowMyName = findViewById(R.id.showMyNameHome);
         cardViewPantry = findViewById(R.id.card_view_games_first_option);
         cardViewTutorial = findViewById(R.id.card_view_first_option);
         cardViewTools = findViewById(R.id.card_view_home_tools);
         cardViewAttraction = findViewById(R.id.card_view_home_attraction);
         cardViewAboutUs = findViewById(R.id.card_view_home_about_us);
+
+        String showMyNameDisplay = "Ciao, " + WelcomeActivity.getUserWelcomeName(getApplicationContext()) + ".";
+
+        txtViewShowMyName.setText(showMyNameDisplay);
 
 
 

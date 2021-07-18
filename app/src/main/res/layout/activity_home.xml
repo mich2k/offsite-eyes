@@ -27,15 +27,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/image_view_tools"
-                android:layout_width="200dp"
-                android:layout_height="182dp"
+            <TextView
+                android:id="@+id/showMyNameHome"
+                android:layout_width="215dp"
+                android:layout_height="126dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/bg"
                 android:contentDescription="@string/home_macro_topic_logo_content_description"
+                android:fontFamily="sans-serif-black"
+                android:gravity="left"
+                android:text="Error"
+                android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,7 +61,7 @@
                 app:cardPreventCornerOverlap="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_tools">
+                app:layout_constraintTop_toBottomOf="@+id/showMyNameHome">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraint_layout_games_first_option"

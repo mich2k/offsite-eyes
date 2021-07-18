@@ -62,6 +62,10 @@
             android:noHistory="true"
             android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
         <activity
+            android:name=".activities.AboutUsActivity"
+            android:label="About_Us"
+            android:theme="@style/Theme.Offsiteeyes.NoActionBar" />
+        <activity
             android:name=".activities.ToolsActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".BootLogoActivity">
