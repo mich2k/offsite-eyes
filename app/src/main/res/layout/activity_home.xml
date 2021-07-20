@@ -35,7 +35,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="@string/home_macro_topic_logo_content_description"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="sans-serif-condensed"
                 android:gravity="left"
                 android:text="Error"
                 android:textSize="34sp"
@@ -328,7 +328,7 @@
                         android:contentDescription="@string/home_macro_topic_about_us_icon_content_description"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView91"
-                        app:srcCompat="@drawable/ic_places" />
+                        app:srcCompat="@drawable/info_svg" />
 
                     <TextView
                         android:id="@+id/textView91"

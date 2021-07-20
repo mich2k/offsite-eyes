@@ -71,11 +71,13 @@
                     android:id="@+id/text_view_first_option"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     android:text="Washing Machine"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/image_view_games_opt2" />
 
@@ -109,7 +111,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_bubbles" />
                    <!-- app:srcCompat="@drawable/" -->
 
 
@@ -117,7 +120,8 @@
                     android:id="@+id/text_view_second_option"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="todo"
+                    android:layout_marginBottom="16dp"
+                    android:text="Your Turn"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
