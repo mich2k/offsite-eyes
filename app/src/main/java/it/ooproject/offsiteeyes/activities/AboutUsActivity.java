@@ -10,7 +10,7 @@ import it.ooproject.offsiteeyes.R;
 
 public class AboutUsActivity extends AppCompatActivity {
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
     }

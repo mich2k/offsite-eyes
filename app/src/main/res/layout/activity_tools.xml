@@ -15,14 +15,14 @@
         android:layout_width="176dp"
         android:layout_height="164dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/bg"
         android:contentDescription="@string/home_macro_topic_logo_content_description"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_tools_scroll"

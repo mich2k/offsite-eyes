@@ -67,7 +67,7 @@ public class HomeActivity extends AppCompatActivity {
         );
 
         cardViewAttraction.setOnClickListener(v ->
-                changeActivityOnClickHandler(HomeActivity.this, WelcomeActivity.class)
+                changeActivityOnClickHandler(HomeActivity.this, HomeActivity.class)
         );
 
         cardViewAboutUs.setOnClickListener(v ->
